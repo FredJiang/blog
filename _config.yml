@@ -7,12 +7,12 @@ title: " "
 subtitle: " "
 description: " "
 author: Fred Jiang
-language: en
+language: default
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://fredjiang.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -69,5 +69,5 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:itxfdIos/itxfdIos.github.io.git
+  repo: git@github.com:FredJiang/FredJiang.github.io.git
   branch: master
