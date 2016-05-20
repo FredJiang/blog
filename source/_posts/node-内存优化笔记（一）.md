@@ -1,5 +1,5 @@
 ---
-title: node 内存优化笔记(一)
+title: node 内存优化笔记（一）
 date: 2016-03-18 13:48:15
 tags: [node, memerory]
 ---

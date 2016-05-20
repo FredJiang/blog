@@ -7,6 +7,7 @@ tags: [mongo, mongodb, master, slave]
 参考 <http://docs.mongodb.org/manual/installation/>
 
 
+
 ### 主从配置
 在 master 和 slave 上分别修改配置文件 /etc/mongod.conf
 
@@ -34,7 +35,7 @@ service mongod start
 
 在 master 中 save 数据，能够在 slave 中查到
 
-
+<!--more-->
 
 
 ### 互为主从

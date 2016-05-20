@@ -16,7 +16,10 @@ postfix 的配置选择
 
 ### 配置 iwatch
 
+<!--more-->
+
 配置文件为 /etc/iwatch/iwatch.xml
+
 
 内容为
 

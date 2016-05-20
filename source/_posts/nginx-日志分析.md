@@ -15,6 +15,8 @@ goaccess --version
 
 后参考官网编译安装成功 <http://goaccess.io/download>
 
+
+
 ```
 $ wget http://tar.goaccess.io/goaccess-0.8.5.tar.gz
 $ tar -xzvf goaccess-0.8.5.tar.gz
@@ -27,6 +29,9 @@ $ make
 
 
 ### 修改 nginx 日志的归档文件名格式
+
+<!--more-->
+
 
 配置文件为：/etc/logrotate.d/nginx
 

@@ -9,6 +9,8 @@ tags: [mongo, replication]
 
 > A replica set is basically a master-slave cluster with automatic failover. The biggest difference between a master-slave cluster and a replica set is that a replica set does not have a single master: one is elected by the cluster and may change to another node if the current master goes down. However, they look very similar: a replica set always has a single master node (called a primary) and one or more slaves (called secondaries). 
 
+<!--more-->
+
 ###### 创建数据库目录
 
 ```

@@ -7,6 +7,8 @@ tags: [nodejs,pm2,pm2-web]
 
 ### 安装 pm2-web
 
+<!--more-->
+
 我安装 pm2-web 的时候，遇到了 node 版本的问题，在这里，我先安装 node 版本管理工具 <https://github.com/tj/n>
 
 然后切换到 node 的稳定版本

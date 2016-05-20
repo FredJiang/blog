@@ -7,6 +7,8 @@ sudo ls 报如下错误
 
 must be setuid root
 
+<!--more-->
+
 先说下 google 找的方法（一般情况下是可行的，但在我的机器上面用不了）
 
 如果有 root 用户，而当前用户又不是 root 用户的话，先切换到 root 用户，然后运行如下命令

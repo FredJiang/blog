@@ -15,6 +15,7 @@ fs.readFile('foo.js', {encoding:'utf8'}, function(err,
 console.log('This happens first');
 ```
 
+<!--more-->
 
 输出结果为：
 
