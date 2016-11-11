@@ -1,0 +1,34 @@
+---
+title: n 和 nvm 对比
+date: 2016-06-23 15:32:25
+tags: [node, nodejs, n, nvm]
+---
+
+
+. | .
+------------- | -------------
+n | .
+<span style="color:red;">GitHub:</span>|https://github.com/visionmedia/n
+<span style="color:red;">Install:</span>|npm install -g n
+<span style="color:red;">Path to Script:</span>|/usr/local/bin/n
+<span style="color:red;">Node Versions Path:</span>|/usr/local/n/versions
+<span style="color:red;">How n gets a new version:</span>|Downloads Binary Node tar.gz file for platform
+<span style="color:red;">How n switches versions:</span>|Copies files from /usr/local/n/versions/node/someVersion/bin/node to /usr/local/bin/node
+<span style="color:red;">global packages</span>|N works by storing different versions of node in some directory somewhere and when you switch versions, it will copy it to  /usr/local/bin. This is great for simplicity. It’s easy to install, easy to use, the only problem is that you basically have to sudo every command. Also, because it’s just swapping out different versions of node from your install directory, it doesn’t have a good way of handling those pesky `npm install -g packages`.
+nvm | .
+<span style="color:red;">GitHub:</span>|https://github.com/creationix/nvm
+<span style="color:red;">Install:</span>|curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+<span style="color:red;">Path to Script:</span>|~/.nvm/nvm.sh
+<span style="color:red;">Node Versions Path:</span>|~/.nvm/
+<span style="color:red;">How nvm gets a new version:</span>|Downloads and compiles source node distribution (binary option also available)
+<span style="color:red;">How nvm switches versions:</span>|updates $PATH variables to point to requested version within ~/.nvm/ directory
+<span style="color:red;">global packages</span>|NVM installs node to `~/.nvm/<version>/`. Then it modifies your PATH to include the proper bin directory. When installing global packages, they too get installed under  `~/.nvm/<version>`
+
+
+
+
+参考 
+
+* <http://www.mattpalmerlee.com/2013/03/23/installing-and-switching-between-multiple-versions-of-node-js-n-vs-nvm/>
+* <https://encyclopediaofdaniel.com/blog/node-js-nvm-vs-n/>
+
