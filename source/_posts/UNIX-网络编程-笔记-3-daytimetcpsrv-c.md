@@ -23,6 +23,8 @@ tags: [socket, unix, network, UNIX 网络编程]
 297  /* end Socket */
 ```
 
+<!--more-->
+
 #### sockaddr_in
 
 * <http://www.cppblog.com/lf426/archive/2008/07/10/55800.html>

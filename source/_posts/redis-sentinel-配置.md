@@ -13,52 +13,82 @@ tags: [redis, sentinel]
 
 ```
 /opt/redis_6
-├── dump.rdb
-├── nohup.out
 ├── redis.conf
 └── sentinel
-    ├── nohup.out
     └── sentinel.conf
 /opt/redis_7
-├── dump.rdb
-├── nohup.out
 ├── redis.conf
 └── sentinel
-    ├── nohup.out
     └── sentinel.conf
 /opt/redis_8
-├── dump.rdb
-├── nohup.out
 ├── redis.conf
 └── sentinel
-    ├── nohup.out
     └── sentinel.conf
 /opt/redis_9
-├── dump.rdb
-├── nohup.out
 └── redis.conf
 ```
 
 
-### 文件内容
+### redis 配置
 
-#### `cat /opt/redis_6/redis.conf`
+在原始 redis.conf 内容的基础上，做如下修改
+
+#### `/opt/redis_6/redis.conf`
 
 ```
-.
 .
 port 6376
 pidfile "/var/run/redis_6376.pid"
 dir "/opt/redis_6"
 protected-mode no
 .
+```
+
+
+#### `/opt/redis_7/redis.conf`
+
+```
+.
+port 6377
+pidfile "/var/run/redis_6377.pid"
+dir "/opt/redis_7"
+protected-mode no
 .
 ```
 
-对应的 7 8 9 文件要改参数 `port` `pidfile ` `dir`
+
+#### `/opt/redis_8/redis.conf`
+
+```
+.
+port 6378
+pidfile "/var/run/redis_6378.pid"
+dir "/opt/redis_8"
+protected-mode no
+.
+```
 
 
-#### `cat /opt/redis_6/sentinel/sentinel.conf`
+#### `/opt/redis_9/redis.conf`
+
+```
+.
+port 6379
+pidfile "/var/run/redis_6379.pid"
+dir "/opt/redis_9"
+protected-mode no
+.
+```
+
+
+
+
+
+### sentinel 配置
+
+注意：以下地址如果写成 127.0.0.1 的话，就只能在本机上使用
+
+#### `/opt/redis_6/sentinel/sentinel.conf`
 
 ```
 port 26386
@@ -67,8 +97,8 @@ protected-mode no
 
 dir /opt/redis_6/sentinel
 
-sentinel monitor user6380 127.0.0.1 6378 2
-sentinel monitor huodong6381 127.0.0.1 6376 2
+sentinel monitor user6380 192.168.200.10 6378 2
+sentinel monitor huodong6381 192.168.200.10 6376 2
 
 sentinel down-after-milliseconds user6380 30000
 sentinel down-after-milliseconds huodong6381 30000
@@ -80,7 +110,50 @@ sentinel failover-timeout user6380 180000
 sentinel failover-timeout huodong6381 180000
 ```
 
-对应的 7 8 文件要改参数 `port` 和 `dir`
+#### `/opt/redis_7/sentinel/sentinel.conf`
+
+```
+port 26387
+
+protected-mode no
+
+dir /opt/redis_7/sentinel
+
+sentinel monitor user6380 192.168.200.10 6378 2
+sentinel monitor huodong6381 192.168.200.10 6376 2
+
+sentinel down-after-milliseconds user6380 30000
+sentinel down-after-milliseconds huodong6381 30000
+
+sentinel parallel-syncs user6380 1
+sentinel parallel-syncs huodong6381 1
+
+sentinel failover-timeout user6380 180000
+sentinel failover-timeout huodong6381 180000
+```
+
+
+#### `/opt/redis_8/sentinel/sentinel.conf`
+
+```
+port 26388
+
+protected-mode no
+
+dir /opt/redis_8/sentinel
+
+sentinel monitor user6380 192.168.200.10 6378 2
+sentinel monitor huodong6381 192.168.200.10 6376 2
+
+sentinel down-after-milliseconds user6380 30000
+sentinel down-after-milliseconds huodong6381 30000
+
+sentinel parallel-syncs user6380 1
+sentinel parallel-syncs huodong6381 1
+
+sentinel failover-timeout user6380 180000
+sentinel failover-timeout huodong6381 180000
+```
 
 
 ### 启动 redis
@@ -100,10 +173,10 @@ nohup /opt/redis-3.2.5/src/redis-server /opt/redis_9/redis.conf &
 
 ```
 /opt/redis-3.2.5/src/redis-cli -p 6377
-slaveof 127.0.0.1 6376
+slaveof 192.168.200.10 6376
 
 /opt/redis-3.2.5/src/redis-cli -p 6379
-slaveof 127.0.0.1 6378
+slaveof 192.168.200.10 6378
 ```
 
 
