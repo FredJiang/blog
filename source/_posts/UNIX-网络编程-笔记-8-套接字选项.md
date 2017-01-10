@@ -1,5 +1,5 @@
 ---
-title: UNIX 网络编程 笔记 8 --  套接字选项
+title: UNIX 网络编程 笔记 8 -- 套接字选项
 date: 2016-12-27 07:14:51
 tags: [socket, unix, network, UNIX 网络编程]
 ---

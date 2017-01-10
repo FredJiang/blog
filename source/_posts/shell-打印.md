@@ -70,4 +70,6 @@ echo ${var}
 
 * 打印变量长度
 
-`echo ${#var}`
+```
+echo ${#var}
+```
