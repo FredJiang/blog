@@ -1,5 +1,5 @@
 ---
-title: UNIX 网络编程 笔记 10 -- ipv4 和ipv6 通信
+title: UNIX 网络编程 笔记 10 -- ipv4 和 ipv6 通信
 date: 2017-01-10 23:39:27
 tags: [socket, unix, network, UNIX 网络编程]
 ---
