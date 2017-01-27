@@ -31,6 +31,14 @@ echo 'Welcome to Bash'
 
 * 打印不同颜色的文字
 
+[ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code)
+
+[Sequence elements](https://en.wikipedia.org/wiki/ANSI_escape_code#Sequence_elements)
+
+[man ascii](http://man7.org/linux/man-pages/man7/ascii.7.html)
+
+In computing, ANSI escape codes (or escape sequences) are a method using in-band signaling to control the formatting, color, and other output options on video text terminals. To encode this formatting information, certain sequences of bytes are embedded into the text, which the terminal looks for and interprets as commands, not as character codes.
+
 ```
 echo -e "\033[1;31m This is red text \033[0m"
 printf "\033[1;31m This is red text \033[0m"

@@ -11,12 +11,12 @@ websocket 介绍 <https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_AP
 ## 测试环境
 
 ### 操作系统版本
-	
+    
 ```
-Distributor ID:	Ubuntu
-Description:	Ubuntu 16.04.1 LTS
-Release:	16.04
-Codename:	xenial
+Distributor ID: Ubuntu
+Description:    Ubuntu 16.04.1 LTS
+Release:    16.04
+Codename:   xenial
 ```
 
 
@@ -119,27 +119,54 @@ server_ws.js
 
 
 ```
-upstream sockettest.xxx.com {
+upstream myServerIp {
     ip_hash;
-    server 127.0.0.1:8088;
-    server 127.0.0.1:8089;
+    server 192.168.200.9:9001;
 }
 
+
 server {
-    client_max_body_size 4G;
-    listen  80;
-    server_name sockettest.xxx.com;
+    client_max_body_size    4G;
+    listen                  9001;
+    server_name             myServerIp;
 
     location / {
-    	proxy_set_header    X-Real-IP		$remote_addr;
-        proxy_set_header    X-Forwarded-For  $proxy_add_x_forwarded_for;
-        proxy_set_header    Host             $http_host;
-        proxy_set_header    X-NginX-Proxy    true;
-        proxy_set_header    Connection "";
-        proxy_set_header    Upgrade $http_upgrade;
-        proxy_set_header    Connection "upgrade";
-        proxy_http_version 1.1;
-        proxy_pass http://sockettest.xxx.com;        
+        proxy_set_header    X-Real-IP       $remote_addr;
+        proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header    Host            $http_host;
+        proxy_set_header    X-NginX-Proxy   true;
+        proxy_set_header    Connection      "";
+        proxy_set_header    Upgrade         $http_upgrade;
+        proxy_set_header    Connection      "upgrade";
+        proxy_read_timeout  86400s;
+        proxy_send_timeout  86400s;
+        proxy_http_version  1.1;
+        proxy_pass          http://myServerIp;
+    }
+}
+
+
+server {
+    client_max_body_size    4G;
+    listen                  443;
+    server_name             myServerIp;
+    ssl on;
+    ssl_certificate         /etc/nginx/ssl/ssl/manage_nopass.crt;
+    ssl_certificate_key     /etc/nginx/ssl/ssl/manage_nopass.key;
+
+    location / {
+        proxy_set_header    X-Real-IP           $remote_addr;
+        proxy_set_header    X-Forwarded-For     $proxy_add_x_forwarded_for;
+        proxy_set_header    X-Forwarded-Proto   $scheme;
+        proxy_set_header    Host                $http_host;
+        proxy_set_header    X-NginX-Proxy       true;
+        proxy_set_header    Connection          "";
+        proxy_set_header    Upgrade             $http_upgrade;
+        proxy_set_header    Connection          "upgrade";
+        proxy_read_timeout  86400s;
+        proxy_send_timeout  86400s;
+        proxy_http_version  1.1;
+        proxy_pass          http://myServerIp;
     }
 }
 ```
@@ -184,8 +211,12 @@ pid /run/nginx.pid;
 worker_rlimit_nofile 2000000;
 
 events {
-#	worker_connections 768;
-	worker_connections 2000000;
-	# multi_accept on;
+#   worker_connections 768;
+    worker_connections 2000000;
+    # multi_accept on;
 }
 ```
+
+
+
+
