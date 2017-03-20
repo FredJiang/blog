@@ -1,6 +1,6 @@
 title: Database Commands 笔记
 date: 2015-02-25 11:21:39
-tags: [mongo, mongodb, command, note]
+tags: [mongo, command, note]
 ---
 
 笔记：MongoDB - The Definitive Guide

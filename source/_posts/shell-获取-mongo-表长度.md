@@ -1,7 +1,7 @@
 ---
 title: shell 获取 mongo 表长度
 date: 2016-06-17 15:09:52
-tags: [mongo, mongodb, shell, count]
+tags: [mongo, shell, count]
 ---
 
 需求

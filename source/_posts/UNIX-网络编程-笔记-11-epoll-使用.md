@@ -4,7 +4,10 @@ date: 2017-02-19 09:50:52
 tags: [socket, unix, network, UNIX 网络编程, epoll]
 ---
 
-参考博客 <https://banu.com/blog/2/how-to-use-epoll-a-complete-example-in-c/>
+参考博客 
+
+* <https://www.zhihu.com/question/20122137/answer/146866418>
+* <https://banu.com/blog/2/how-to-use-epoll-a-complete-example-in-c/>
 
 <!--more-->
 
@@ -328,4 +331,5 @@ int main (int argc, char *argv[]) {
   return EXIT_SUCCESS;
 }
 ```
+
 
