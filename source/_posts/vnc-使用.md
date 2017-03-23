@@ -111,6 +111,16 @@ vncserver
 vncserver -kill :1
 ```
 
+### 其他命令
+
+调整分辨率
+
+`vncserver -geometry 1280x800`
+
+查看当前分辨率
+
+`xrandr`
+
 参考
 
 * <https://www.howtoforge.com/vnc-server-installation-on-centos-7>
