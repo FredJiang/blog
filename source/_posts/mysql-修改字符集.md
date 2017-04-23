@@ -1,7 +1,7 @@
 ---
 title: mysql 修改字符集
 date: 2016-05-24 21:40:55
-tags: [mysql, charset, utf8, utf8mb4, utf8mb4_unicode_ci, node, nodejs, sequelize]
+tags: [mysql, charset, utf8, utf8mb4, utf8mb4_unicode_ci, node.js, sequelize]
 ---
 
 在 nodejs 中，用 sequelize 模块更新数据库时，报错

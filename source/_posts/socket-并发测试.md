@@ -1,7 +1,7 @@
 ---
 title: socket 并发测试
 date: 2016-11-16 10:54:15
-tags: [socket, tcp, node]
+tags: [socket, tcp, node.js]
 ---
 
 websocket 介绍 <https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers>

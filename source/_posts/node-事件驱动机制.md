@@ -1,7 +1,7 @@
 ---
 title: node 事件驱动机制
 date: 2016-03-11 22:58:12
-tags: [node, event]
+tags: [node.js, event]
 ---
 
 以下面代码执行为例

@@ -1,6 +1,6 @@
 title: pm2-web 安装
 date: 2015-02-01 23:54:08
-tags: [nodejs,pm2,pm2-web]
+tags: [node.js, pm2, pm2-web]
 ---
 
 参考地址 <https://www.npmjs.com/package/pm2-web>

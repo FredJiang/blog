@@ -1,7 +1,7 @@
 ---
 title: node addon
 date: 2017-02-12 14:28:44
-tags: [node, c++, v8]
+tags: [node.js, c++, v8]
 ---
 
 在 node 中使用 C++

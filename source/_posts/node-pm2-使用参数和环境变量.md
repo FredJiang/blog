@@ -1,7 +1,7 @@
 ---
 title: node pm2 使用参数和环境变量
 date: 2016-08-10 10:33:09
-tags: [pm2, node, args, environment]
+tags: [pm2, node.js, args, environment]
 ---
 
 

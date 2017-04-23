@@ -1,7 +1,7 @@
 ---
 title: node cpu 优化 1 - tick
 date: 2016-12-27 09:28:20
-tags: [node, cpu, profile, tick]
+tags: [node.js, cpu, profile, tick]
 ---
 
 ### 收集数据

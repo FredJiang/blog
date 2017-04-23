@@ -15,15 +15,25 @@ tags: [emacs, install, source code]
 * 再看 <https://www.gnu.org/software/emacs/manual/html_node/efaq/Installing-Emacs.html>
 
 
+
+
 ### 运行命令
+
+
+安装 emacs
 
 ```
 wget "http://mirrors.ustc.edu.cn/gnu/emacs/emacs-25.1.tar.gz"
 tar -zxvf emacs-25.1.tar.gz
 cd emacs-25.1
+# 桌面版
 ./configure
+# 非桌面版
+# ./configure --without-x
 sudo make install
 ```
+
+下载配置文件
 
 ```
 cd && \
@@ -31,7 +41,31 @@ git clone https://github.com/FredJiang/.emacs.d.git && \
 cd .emacs.d && \
 git submodule init && \
 git submodule update && \
-emacs
+./setup.sh
+```
+
+安装其他工具
+
+```
+npm -g install js-beautify
+```
+
+```
+# mac 下
+brew install clang-format
+sudo yum install -y clang
+```
+
+```
+wget "https://jaist.dl.sourceforge.net/project/cscope/cscope/15.8b/cscope-15.8b.tar.gz"
+tar -zxf cscope-15.8b.tar.gz
+cd cscope-15.8b
+./configure
+make
+sudo make install
+sudo cp contrib/xcscope/cscope-indexer /usr/local/bin/
+sudo chmod +x /usr/local/bin/cscope-indexer
+cp contrib/xcscope/xcscope.el ~/.emacs.d/mypackages/
 ```
 
 ### 错误处理
@@ -52,5 +86,3 @@ emacs
 sudo apt-get install build-essential
 sudo apt-get build-dep emacs24
 ```
-
-

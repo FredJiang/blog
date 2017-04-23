@@ -1,7 +1,7 @@
 ---
 title: 'nvm Error: EACCES: permission denied, scandir'
 date: 2016-06-24 10:00:55
-tags: [node, n, nvm]
+tags: [node.js, n, nvm]
 ---
 
 由于 node 版本更新的比较快，如果想要不断试用新的版本，一个版本控制器就是必不可少的了。之前一直用的 [n](https://github.com/tj/n)，但每次切换版本时，global package 总会有点问题，因此想试用一下 [nvm](https://github.com/creationix/nvm)

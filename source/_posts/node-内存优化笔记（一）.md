@@ -1,7 +1,7 @@
 ---
 title: node 内存优化笔记（一）
 date: 2016-03-18 13:48:15
-tags: [node, memerory]
+tags: [node.js, memerory]
 ---
 
 [Deploying Node.js](http://www.amazon.cn/Deploying-Node-js-Pasquali-Sandro/dp/1783981407/ref=sr_1_1?s=books&ie=UTF8&qid=1458280419&sr=1-1&keywords=9781783981403)

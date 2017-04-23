@@ -1,7 +1,7 @@
 ---
 title: node 习惯
 date: 2016-04-19 10:06:02
-tags: [node, nodejs, npm]
+tags: [node.js, npm]
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: n 和 nvm 对比
 date: 2016-06-23 15:32:25
-tags: [node, nodejs, n, nvm]
+tags: [node.js, n, nvm]
 ---
 
 <!--more-->
