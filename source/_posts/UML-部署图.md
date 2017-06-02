@@ -1,7 +1,7 @@
 ---
 title: UML 部署图
 date: 2016-08-06 23:58:27
-tags: [UML, deploy]
+tags: [uml, deploy]
 ---
 
 最近整理服务器，需要画出服务器的 [UML](http://www.omg.org/spec/UML/) 部署图，这里用到了 [plantuml](http://plantuml.com/) 的 Component Diagram 和 Deployment Diagram。

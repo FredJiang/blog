@@ -86,3 +86,17 @@ cp contrib/xcscope/xcscope.el ~/.emacs.d/mypackages/
 sudo apt-get install build-essential
 sudo apt-get build-dep emacs24
 ```
+
+
+#### emacs
+
+报错
+
+> File error: http://stable.melpa.org/packages/async-1.9.tar, Not found
+
+
+在 emacs 中运行如下命令
+
+<kbd>M-x</kbd> `package-refresh-contents` 
+
+

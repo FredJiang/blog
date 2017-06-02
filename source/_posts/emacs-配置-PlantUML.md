@@ -1,7 +1,7 @@
 ---
 title: emacs 配置 PlantUML
 date: 2016-08-04 16:22:13
-tags: [emacs, PlantUML, uml]
+tags: [emacs, uml]
 ---
 
 

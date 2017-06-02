@@ -1,0 +1,52 @@
+@startuml
+
+skinparam monochrome revers
+
+box "(objects)对象" #yellow
+  participant "let will = new Person(...)"
+end box
+
+box "Functions(objects)函数对象" #white
+  participant "function Person"
+  participant "function Function"
+  participant "function Object"
+end box
+
+box "Prototypes(objects)原型对象" #LightBlue
+  participant "Person.prototype (Persion {})"
+  participant "Function.prototype (function() {})"
+  participant "Object.prototype (Object {})"
+end box
+
+== 对象 有 ~__proto__ 属性 ==
+
+"let will = new Person(...)" -[#red]> "Person.prototype (Persion {})" : ~__proto__
+
+== 函数对象 有 prototype 属性 ==
+
+"function Person" -[#red]> "Person.prototype (Persion {})" : prototype
+"function Function" -[#green]> "Function.prototype (function() {})" : prototype
+"function Object" -[#green]> "Object.prototype (Object {})" : prototype
+
+== 原型对象 有 constructor 属性 ==
+
+ "Person.prototype (Persion {})" -[#red]> "function Person" : constructor
+ "Function.prototype (function() {})" -[#green]> "function Function" : constructor
+ "Object.prototype (Object {})" -[#green]> "function Object" : constructor
+
+== 对象 有 ~__proto__ 属性 ==
+
+"function Person" -[#green]> "Function.prototype (function() {})" : ~__proto__
+"function Function" -[#green]> "Function.prototype (function() {})" : ~__proto__
+"function Object" -[#green]> "Function.prototype (function() {})" : ~__proto__
+
+== 对象 有 ~__proto__ 属性 ==
+
+"Person.prototype (Persion {})" -[#red]> "Object.prototype (Object {})" : ~__proto__
+"Function.prototype (function() {})" -[#green]> "Object.prototype (Object {})" : ~__proto__
+
+== 对象 有 ~__proto__ 属性 ==
+
+"Object.prototype (Object {})" -[#red]> null : ~__proto__
+
+@enduml

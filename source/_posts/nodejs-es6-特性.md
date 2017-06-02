@@ -1,7 +1,7 @@
 ---
 title: nodejs es6 特性
 date: 2016-04-22 16:01:15
-tags: [node.js, es, V8, javascript]
+tags: [node.js, es, v8, javascript]
 ---
 
 Node.js 是在 [V8](https://developers.google.com/v8/) 的基础上建立的。所以 V8 支持的 ES 特性，Node.js 的最新版一般都支持。

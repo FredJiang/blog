@@ -1,7 +1,7 @@
 ---
 title: Node.js tips
 date: 2016-04-26 19:03:32
-tags: [Node.js, ES6, ES2015]
+tags: [node.js, ES6, ES2015]
 ---
 
 
