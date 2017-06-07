@@ -37,6 +37,7 @@ tags: [redis, sentinel]
 
 ```
 .
+# bind 127.0.0.1
 port 6376
 pidfile "/var/run/redis_6376.pid"
 dir "/opt/redis_6"
@@ -49,6 +50,7 @@ protected-mode no
 
 ```
 .
+# bind 127.0.0.1
 port 6377
 pidfile "/var/run/redis_6377.pid"
 dir "/opt/redis_7"
@@ -61,6 +63,7 @@ protected-mode no
 
 ```
 .
+# bind 127.0.0.1
 port 6378
 pidfile "/var/run/redis_6378.pid"
 dir "/opt/redis_8"
@@ -73,6 +76,7 @@ protected-mode no
 
 ```
 .
+# bind 127.0.0.1
 port 6379
 pidfile "/var/run/redis_6379.pid"
 dir "/opt/redis_9"

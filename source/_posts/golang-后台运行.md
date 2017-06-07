@@ -5,7 +5,7 @@ tags: [go, supervisor]
 ---
 
 
-<!--more-->
+
 
 安装 supervisor
 
@@ -15,6 +15,7 @@ sudo yum install python-setuptools
 sudo easy_install supervisor
 ```
 
+<!--more-->
 
 查看配置
 
