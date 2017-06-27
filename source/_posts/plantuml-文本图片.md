@@ -78,3 +78,7 @@ java -jar ~/plantuml.jar -txt AsciiArt.puml
 另外还可以配合 `ditaa` 生成真的图片
 
 <http://ditaa.sourceforge.net/>
+
+
+
+另外在 mac 下，可以试试 Monodraw 这个软件。
