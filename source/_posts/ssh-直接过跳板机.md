@@ -66,3 +66,4 @@ sshpass -p 'password' ssh -tt -p22 jiangpeng@server3
 
 * <https://www.cyberciti.biz/faq/linux-unix-ssh-proxycommand-passing-through-one-host-gateway-server/>
 * <https://blog.tjll.net/ssh-kung-fu/#public-key-cryptography>
+* <http://mingxinglai.com/cn/2015/07/ssh-proxycommand/>

@@ -1,7 +1,7 @@
 ---
 title: shell 数学
 date: 2016-12-29 20:23:35
-tags: [shell, bash, math]
+tags: [shell, math]
 ---
 
 The Bash shell environment can perform basic arithmetic operations using the commands let, (( )), and []. The two utilities expr and bc are also very helpful in performing advanced operations.

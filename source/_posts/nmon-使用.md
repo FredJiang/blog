@@ -1,7 +1,7 @@
 ---
 title: nmon 使用
 date: 2016-11-15 11:36:58
-tags: [nmon, linux]
+tags: [nmon, linux, plot, benchmark, test]
 ---
 
 ### 安装

@@ -16,8 +16,8 @@ tags: [git]
 相应命令
 
 ```
-sudo yum install curl-devel
-sudo yum install perl-ExtUtils-MakeMaker
+sudo yum install -y curl-devel
+sudo yum install -y perl-ExtUtils-MakeMaker
 wget https://github.com/git/git/archive/v2.1.2.tar.gz -O git.tar.gz
 tar -zxf git.tar.gz
 cd git-2.1.2

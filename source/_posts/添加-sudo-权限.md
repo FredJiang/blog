@@ -1,7 +1,7 @@
 ---
 title: 添加 sudo 权限
 date: 2016-05-30 14:16:29
-tags: [linux, sudo, user]
+tags: [linux, sudo, user, ssh]
 ---
 
 ##### 添加用户

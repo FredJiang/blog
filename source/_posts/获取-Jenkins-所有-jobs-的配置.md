@@ -43,3 +43,23 @@ get-job  (对应 path 为 /cli/command/get-job)
 PS:
 
 如果 xml 的数据看不习惯的话，可以用 <https://codebeautify.org/xmlviewer> 将 xml 数据转成 json 格式的
+
+
+
+另外可以用如下命令提取相应信息
+
+
+```
+(java -jar jenkins-cli.jar -s http://yousite/ list-jobs \
+| xargs -I param \
+bash -c 'echo -e jobName param ; java -jar jenkins-cli.jar -s http://yousite/ get-job param ; echo -e \\n ;' \
+| grep -e "jobName" -e "<url>" -e "<name>" -e "<remoteDirectory>" -e "^$" -e "<configName>") \
+| sed 's/<url>/git 地址 /g' \
+| sed 's/<\/url>//g' \
+| sed 's/<configName>/推到服务器 /g' \
+| sed 's/<\/configName>//g' \
+| sed 's/<remoteDirectory>/的目录 /g' \
+| sed 's/<\/remoteDirectory>//g' \
+| sed 's/<name>/git 分支 /g' \
+| sed 's/<\/name>//g'
+```

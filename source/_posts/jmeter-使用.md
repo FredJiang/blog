@@ -1,7 +1,7 @@
 ---
 title: jmeter 使用
 date: 2017-02-20 15:16:06
-tags: [test, jmeter]
+tags: [test, jmeter, benchmark, plot]
 ---
 
 
@@ -159,4 +159,11 @@ mode=Statistical
 参考
 
 * <https://www.artofsoftwaredevelopment.com/performance/performance-testing-in-the-cloud-with-jmeter-aws>
+
+
+
+除了 jmeter 以外，还可以用 
+
+* Apache 的 ab
+* http_load
 
