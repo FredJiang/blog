@@ -1,7 +1,7 @@
 ---
 title: atom 编辑 uml
 date: 2016-12-21 17:57:22
-tags: [atom, editor, uml, plantuml]
+tags: [uml, plantuml, atom, editor]
 ---
 
 之前一直用 emacs 来编辑 uml（[emacs 配置 PlantUML](../../../../2016/08/04/emacs-配置-PlantUML/)），由于 uml 的复杂度增加，就换了 atom。

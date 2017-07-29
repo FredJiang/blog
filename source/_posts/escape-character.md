@@ -20,6 +20,7 @@ vim color_escape
 grep '\e\[' color_escape
 ```
 
+<!--more-->
 
 {% asset_img "cat.png" "" %}
 

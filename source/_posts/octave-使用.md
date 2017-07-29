@@ -51,3 +51,8 @@ brew uninstall gnuplot
 brew install gnuplot --with-x11
 echo "setenv('GNUTERM','X11')" >> ~/.octaverc
 ```
+
+
+
+* <https://en.wikibooks.org/wiki/Octave_Programming_Tutorial>
+* <https://en.wikibooks.org/wiki/Octave_Programming_Tutorial/Vectors_and_matrices>

@@ -1,7 +1,7 @@
 ---
 title: plantuml 文本图片
 date: 2017-05-12 18:52:58
-tags: [uml, ASCII, ditaa]
+tags: [uml, plantuml, ASCII, ditaa]
 ---
 
 在写博客时，需要一些图，由于图片相对于文字体积较大，所以想用文本来表示图片
