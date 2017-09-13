@@ -1,13 +1,18 @@
 ---
 title: linux /proc 笔记
 date: 2016-11-30 09:49:05
-tags: [linux, proc]
+tags: [linux, proc, env]
 ---
 
 
 #### /proc/$PID/environ
 
 `(cat environ; echo) | tr '\000' '\n'`
+
+```
+PID=28736
+(cat /proc/$PID/environ; echo) | tr '\000' '\n'
+```
 
 
 

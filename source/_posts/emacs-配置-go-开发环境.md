@@ -1,7 +1,7 @@
 ---
 title: emacs 配置 go 开发环境
 date: 2017-04-30 11:16:14
-tags: [emacs, go]
+tags: [emacs, golang]
 ---
 
 

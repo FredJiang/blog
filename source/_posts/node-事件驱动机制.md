@@ -4,6 +4,8 @@ date: 2016-03-11 22:58:12
 tags: [node.js, event]
 ---
 
+
+
 以下面代码执行为例
 
 ```
@@ -35,3 +37,11 @@ Then the contents are available, [file contents shown]
 * JavaScript 的 callback 被放到 event loop 队列里面并在下一个 tick 中执行
 * 打印 "Then the contents are available "
 * 没有 callback 了，进程结束
+
+
+
+参考
+
+* <https://www.youtube.com/watch?v=8aGhZQkoFbQ>
+* [http://latentflip.com/loupe/](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D)
+* 

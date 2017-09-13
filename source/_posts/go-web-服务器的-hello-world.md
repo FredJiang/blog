@@ -1,7 +1,7 @@
 ---
 title: go web 服务器的 hello world
 date: 2017-05-07 17:25:10
-tags: [go, web]
+tags: [golang, web]
 ---
 
 代码结构

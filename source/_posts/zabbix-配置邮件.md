@@ -25,3 +25,8 @@ tags: [linux, zabbix, email]
 <http://service.mail.qq.com/cgi-bin/help?subtype=1&&no=1001256&&id=28>
 
 如果有授权码，密码填授权码，否则填 qq 密码
+
+
+另外还要确认 zabbix 设置了相应的触发器
+
+{% asset_img "zabbix-qq-mail-6.png" "" %}

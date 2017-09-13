@@ -24,11 +24,13 @@ tags: [mysql, phthon, mycli, pip]
 不知道。。。
 
 ```
-sudo yum install libevent-devel
-sudo yum install python-devel
-sudo yum install python-pip 
-sudo yum install python-setuptools
+sudo yum update  -y && \
+sudo yum install -y libevent-devel && \
+sudo yum install -y python-devel && \
+sudo yum install -y python-pip  && \
+sudo yum install -y python-setuptools && \
+sudo pip install argparse && \
+sudo pip install mycli
 
-sudo pip install argparse
-sudo pip install mycli==1.8.1
+# sudo pip install mycli==1.8.1
 ```

@@ -79,6 +79,7 @@ docker run \
 -e MYSQL_DATABASE="zabbixdb" \
 -e MYSQL_USER="zabbix" \
 -e MYSQL_PASSWORD="zabbixpassword" \
+-e PHP_TZ="Asia/Shanghai" \
 -d \
 zabbix/zabbix-web-nginx-mysql
 ```
@@ -114,6 +115,23 @@ server {
    Password:  zabbix
 ```
 
+
+配置忽略错误 `Lack of free swap space`
+
+1. 配置
+2. 模板
+3. Template OS Linux
+4. 触发器 
+5. Lack of free swap space on {HOST.NAME}
+
+将
+
+`{Template OS Linux:system.swap.size[,pfree].last(0)}<50`
+
+改为
+
+`{Template OS Linux:system.swap.size[,pfree].last(0)}<50 and {Template OS Linux:system.swap.size[,free].last(0)}<>0`
+
 参考
 
 * [How To Install Zabbix Server 3.0 on CentOS/RHEL 7/6/5](http://tecadmin.net/install-zabbix-network-monitoring-on-centos-rhel-and-fedora/)
@@ -121,3 +139,4 @@ server {
 * [How To Install Zabbix Agent on Ubuntu 16.04/14.04 LTS and Debian 8/7](http://tecadmin.net/install-zabbix-agent-on-ubuntu-and-debian/)
 * [How to Add Host in Zabbix Server to Monitor](http://tecadmin.net/add-host-zabbix-server-monitor/)
 * [proxies](https://www.zabbix.com/documentation/3.2/manual/distributed_monitoring/proxies)
+* <https://www.kaijia.me/2014/11/zabbix-report-lack-of-free-swap-space-issue-on-server-without-swap-solved/>

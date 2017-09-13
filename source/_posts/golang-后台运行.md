@@ -1,7 +1,7 @@
 ---
 title: golang 后台运行
 date: 2017-05-27 11:02:42
-tags: [go, supervisor]
+tags: [golang, supervisor]
 ---
 
 

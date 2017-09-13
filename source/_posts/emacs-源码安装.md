@@ -23,9 +23,9 @@ tags: [emacs, install, source code]
 安装 emacs
 
 ```
-wget "http://mirrors.ustc.edu.cn/gnu/emacs/emacs-25.1.tar.gz"
-tar -zxvf emacs-25.1.tar.gz
-cd emacs-25.1
+wget "http://mirrors.ustc.edu.cn/gnu/emacs/emacs-25.2.tar.gz"
+tar -zxvf emacs-25.2.tar.gz
+cd emacs-25.2
 # 桌面版
 ./configure
 # 非桌面版
