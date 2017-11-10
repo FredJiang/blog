@@ -12,6 +12,10 @@ tags: [ssh]
 
 在内网的机器上
 
+`sudo apt-get install -y openssh-server`
+
+`sudo service ssh status`
+
 `ssh-keygen`
 
 将 id_rsa.pub 放到外网的机器上，然后
@@ -32,9 +36,21 @@ autossh -p 22 -M 8021 -fNR 8022:127.0.0.1:22 fred@外网ip
 设为开机启动
 
 ```
+ls -l /etc/rc.local
+sudo chmod +x /etc/rc.local
 vim /etc/rc.local
+```
+
+```
+#!/bin/sh
 su -c 'autossh -p 22 -M 8021 -fNR 8022:127.0.0.1:22 fred@外网ip' - fred
 ```
+
+```
+# 检查配置文件是否正确，测试时，写绝对路径
+sudo service rc.local start
+```
+
 
 ### 内网机器为 centos 环境
 
@@ -59,7 +75,10 @@ sudo vim /etc/rc.d/rc.local
 
 添加
 
-`su -c 'autossh -p 22 -M 8021 -fNR 8022:127.0.0.1:22 fred@外网ip' - fred`
+```
+#!/bin/sh
+su -c 'autossh -p 22 -M 8021 -fNR 8022:127.0.0.1:22 fred@外网ip' - fred
+```
 
 
 参考

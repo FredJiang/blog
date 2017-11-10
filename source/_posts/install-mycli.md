@@ -4,12 +4,10 @@ date: 2017-07-07 00:16:06
 tags: [mysql, phthon, mycli, pip]
 ---
 
-
 机器环境
 
 * CentOS release 6.8 (Final)
 * Python 2.6.6
-
 
 <!--more-->
 

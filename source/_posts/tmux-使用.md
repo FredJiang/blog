@@ -1,7 +1,7 @@
 ---
 title: tmux 使用
 date: 2017-08-22 12:32:27
-tags: [tmux, iTerm2]
+tags: [tmux, iTerm2, tmuxinator]
 ---
 
 如果使用 iTerm2，且 tmux 的版本足够新的话，可以使用如下命令打开 tmux
@@ -124,12 +124,12 @@ centos 下
 在 centos 上
 
 ```
-sudo yum remove -y ruby ruby-devel && \
 sudo yum groupinstall -y "Development Tools" && \
-sudo yum install -y openssl-devel && \
-wget "http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz" && \
-tar xvfvz ruby-2.1.2.tar.gz && \
-cd ruby-2.1.2 && \
+sudo yum install      -y  openssl-devel && \
+sudo yum remove       -y  ruby ruby-devel && \
+wget "http://cache.ruby-lang.org/pub/ruby/2.4/ruby-2.4.0.tar.gz" && \
+tar xvfvz ruby-2.4.0.tar.gz && \
+cd ruby-2.4.0 && \
 ./configure && \
 make && \
 sudo make install

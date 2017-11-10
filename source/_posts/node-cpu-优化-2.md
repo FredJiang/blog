@@ -1,12 +1,10 @@
 ---
 title: node cpu 优化 2
 date: 2017-06-12 16:23:00
-tags: [node.js, cpu, strace, lsof]
+tags: [node.js, cpu, strace, lsof, optimize]
 ---
 
-
 服务器在跑 node 程序，cpu 有点出乎意料的高。。。
-
 
 <!--more-->
 
@@ -77,7 +75,7 @@ lsof -p 302
 接着看系统调用 write
 
 
-用命令 `lsof -p 302`，这次不用 `-c`
+用命令 `strace -p 302`，这次不用 `-c`
 
 
 发现有大量的如下系统调用
@@ -89,7 +87,7 @@ write(60, "\203\0\0\0\3orderby\0\26\0\0\0\20repairTimes\0\1\0"..., 131) = 131
 
 上面的 `...` 说明 buffer 没显示全，可以用 `-s` 打印更多的 buffer 数据，如下
 
-`lsof -p 302 -c 1024`
+`strace -p 302 -s 1024`
 
 根据 tweoe.receip（项目中使用的一个 mongo 表） 和 repairTimes（表中的字段），查看程序代码，最终找到了问题。。。
 

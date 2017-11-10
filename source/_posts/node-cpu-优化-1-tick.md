@@ -1,7 +1,7 @@
 ---
 title: node cpu 优化 1 - tick
 date: 2016-12-27 09:28:20
-tags: [node.js, cpu, profile, tick]
+tags: [node.js, cpu, profile, tick, optimize]
 ---
 
 ### 收集数据
@@ -41,11 +41,11 @@ slow100k()
 
 ### 字段说明
 
-。| 。
-------------- | -------------
-LazyCompile  | If you are using V8's tick processors keep in mind that LazyCompile: prefix does not mean that this time was spent in compiler, it just means that the function itself was compiled lazily.
-asterisk  | An asterisk before a function name means that time is being spent in optimized function, tilde -- not optimized.
-Stub| Stub prefix to the best of my understanding means the execution was inside a C-Stub, which is a part of runtime and gets compiled along with other parts of the engine (i.e. it is not JIT-compiled JS code).
+|     。      |                                                                                                      。                                                                                                       |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| LazyCompile | If you are using V8's tick processors keep in mind that LazyCompile: prefix does not mean that this time was spent in compiler, it just means that the function itself was compiled lazily.                   |
+| asterisk    | An asterisk before a function name means that time is being spent in optimized function, tilde -- not optimized.                                                                                              |
+| Stub        | Stub prefix to the best of my understanding means the execution was inside a C-Stub, which is a part of runtime and gets compiled along with other parts of the engine (i.e. it is not JIT-compiled JS code). |
 
 
 ### 实际项目测试

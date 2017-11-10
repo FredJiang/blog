@@ -1,7 +1,7 @@
 ---
 title: vnc 使用
 date: 2017-03-14 07:59:46
-tags: [vnc]
+tags: [mac, vnc, remote, linux]
 ---
 
 ### ubuntu

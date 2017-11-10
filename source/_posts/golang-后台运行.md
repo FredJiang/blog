@@ -73,3 +73,4 @@ stderr_capture_maxbytes=1MB
 
 * <http://liyangliang.me/posts/2015/06/using-supervisor/>
 * <http://supervisord.org/running.html>
+* <https://github.com/NanXiao/golang-101-hacks/blob/master/posts/go-build-vs-go-install.md>

@@ -5,9 +5,11 @@ tags: [blowfish, node.js, crypto]
 ---
 
 
-文档
+参考
 
-<https://nodejs.org/api/crypto.html#crypto_cipher_update_data_inputencoding_outputencoding>
+* <https://nodejs.org/api/crypto.html#crypto_cipher_update_data_inputencoding_outputencoding>
+* <https://cnodejs.org/topic/504061d7fef591855112bab5>
+* <http://blog.csdn.net/qingkong999/article/details/48314009>
 
 <!--more-->
 

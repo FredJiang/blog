@@ -1,7 +1,7 @@
 ---
 title: html markdown 混合使用
 date: 2017-06-21 09:44:04
-tags: [html, markdown]
+tags: [html, markdown, python]
 ---
 
 demo 可以参考这
@@ -13,6 +13,10 @@ demo 可以参考这
 启动一个静态资源服务端
 
 `python -m SimpleHTTPServer 8000`
+
+or
+
+`python3 -m SimpleHTTPServer 8000`
 
 
 将图片转成 base64 的文本

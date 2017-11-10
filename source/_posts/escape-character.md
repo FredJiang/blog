@@ -1,7 +1,7 @@
 ---
 title: escape character
 date: 2017-07-06 17:42:53
-tags: [escape, grep, vim, shell]
+tags: [escape, grep, vim, shell, color, echo]
 ---
 
 

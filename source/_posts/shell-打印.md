@@ -1,7 +1,7 @@
 ---
 title: shell - 打印
 date: 2016-12-19 21:12:06
-tags: [shell, linux, color, escape]
+tags: [shell, linux, color, escape, echo]
 ---
 
 

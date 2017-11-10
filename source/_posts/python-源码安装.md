@@ -5,20 +5,49 @@ tags: [python]
 ---
 
 
-
-
-
-
 ```
 sudo yum groupinstall -y "Development tools"
 sudo yum install -y zlib zlib-devel openssl-devel openssl bzip2-devel ncurses-devel sqlite-devel
+
 # sudo apt-get install -y zlib1g-dev 还未在 ubuntu 下测试
+
 wget https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tgz
 tar xzf Python-2.7.13.tgz
-cd Python-2.7.13
-./configure
-sudo make install
+
+cd ~/Python-2.7.13 \
+&& \
+sudo make clean \
+&& \
+./configure --prefix=/usr/local \
+&& \
+make && sudo make install
+
+
+# vim 的 YouCompleteMe 需要 --enable-shared
+cd ~/Python-2.7.13 \
+&& \
+sudo make clean \
+&& \
+sudo ./configure --prefix=/usr/local --enable-shared \
+&& \
+sudo make && sudo make install
 ```
+
+
+
+
+```
+/opt/glibc-2.14/lib/libresolv.so.2: undefined reference to `memcpy@GLIBC_2.14'
+collect2: error: ld returned 1 exit status
+make: *** [python] Error 1
+```
+
+```
+locate libresolv.so.2
+echo $LD_LIBRARY_PATH
+LD_LIBRARY_PATH=/lib64/:$LD_LIBRARY_PATH
+```
+
 
 
 <!--more-->
@@ -58,6 +87,7 @@ No matching distribution found for pip
 
 <http://blog.csdn.net/jobschen/article/details/72818473>
 
+
 如果安装 `python` 后，`yum` 不能用的话
 
 
@@ -69,11 +99,12 @@ No matching distribution found for pip
 
 我在安装过程中，使用了 `./configure --prefix=/usr`，导致 `yum` 不能用了
 
+
 ```
 wget https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tgz && \
 tar xzf Python-2.7.13.tgz && \
 cd Python-2.7.13 && \
-./configure --prefix=/usr && \
+./configure --prefix=/usr && \ # 别用
 sudo make install
 ```
 

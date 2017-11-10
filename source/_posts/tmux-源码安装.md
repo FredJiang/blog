@@ -18,7 +18,7 @@ sudo yum install -y tmux
 
 ```
 sudo yum groupinstall -y "Development Tools" && \
-sudo yum install -y gcc kernel-devel make ncurses-devel && \
+sudo yum install      -y gcc kernel-devel make ncurses-devel && \
 cd && \
 curl -OL "https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz" && \
 tar -xvzf libevent-2.0.22-stable.tar.gz && \
@@ -37,6 +37,42 @@ make && \
 sudo make install
 ```
 
+
+通过 git 安装
+
+<https://github.com/tmux/tmux>
+
+```
+sudo yum groupinstall -y "Development Tools" && \
+sudo yum install      -y gcc kernel-devel make ncurses-devel && \
+cd && \
+curl -OL "https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz" && \
+tar -xvzf libevent-2.0.22-stable.tar.gz && \
+cd libevent-2.0.22-stable && \
+./configure --prefix=/usr/local && \
+make && \
+sudo make install
+
+
+git clone https://github.com/tmux/tmux.git && \
+cd tmux && \
+sh autogen.sh && \
+./configure && \
+make && \
+sudo make install
+
+./tmux -V
+
+# ./tmux: error while loading shared libraries: libevent-2.0.so.5: cannot open shared object file: No such file or directory
+
+ls /usr/local/lib/ | grep libevent
+
+ls /usr/lib64/ | grep libevent
+
+sudo ln -s /usr/local/lib/libevent-2.0.so.5 /usr/lib64/libevent-2.0.so.5
+
+
+```
 
 如果 `tmux` 报错
 
