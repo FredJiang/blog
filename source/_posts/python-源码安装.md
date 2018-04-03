@@ -50,6 +50,15 @@ LD_LIBRARY_PATH=/lib64/:$LD_LIBRARY_PATH
 
 
 
+```
+python: error while loading shared libraries: libpython2.7.so.1.0: cannot open shared object file: No such file or directory
+```
+
+```
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
+```
+
+
 <!--more-->
 
 

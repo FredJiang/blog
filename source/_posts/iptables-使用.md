@@ -23,9 +23,10 @@ sudo iptables -I INPUT -p tcp -s 10.0.0.0/27 --dport 27017 -j ACCEPT
 -AID 链名：针对某链进行规则的 "累加" 或 "插入" 或 "删除"
 
 *     -A  ：新增加一条规则，该规则增加在原本规则的最后面。
-*     -I  ：插入一条规则。如果没有指定此规则的顺序，默认是插入变成第一条规则。
+*     -I  ：插入一条规则。如果没有指定此规则的顺序，默认是插入变成第一条规则。`sudo iptables -I INPUT [rulenum, default 1] -p tcp -s 10.0.0.0/27 --dport 27017 -j ACCEPT`
 *     -D  ：删除规则。
 *     链  ：有 INPUT, OUTPUT, FORWARD 等。
+
 
 -S 显示规则
 

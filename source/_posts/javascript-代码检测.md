@@ -52,7 +52,7 @@ sh -c 'echo "check $(dirname param)\n" && npm-check $(dirname param)'
 
 ### <https://github.com/beautify-web/js-beautify>
 
-
+<https://github.com/victorporof/Sublime-HTMLPrettify>
 
 
 ### <https://github.com/standard/standard>
@@ -118,7 +118,7 @@ module.exports = {
 ### Sublime Text 配置 eslint
 
 * SublimeLinter
-* SublimeLinter-contrib-eslint
+* SublimeLinter-eslint
 * ESLint-Formatter
 
 Sublime Text -> Prefences -> Package Settings -> SublimeLinter -> Settings-Default or Settings-User

@@ -1,7 +1,7 @@
 ---
 title: node.js blowfish 加密
 date: 2017-08-21 22:25:43
-tags: [blowfish, node.js, crypto]
+tags: [blowfish, node.js, crypto, encrypt]
 ---
 
 

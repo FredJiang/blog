@@ -1,7 +1,7 @@
 ---
 title: pm2 说明
 date: 2017-09-14 12:02:12
-tags:
+tags: [node.js, pm2]
 ---
 
 

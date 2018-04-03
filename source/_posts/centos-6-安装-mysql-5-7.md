@@ -1,7 +1,7 @@
 ---
 title: centos 6 安装 mysql 5.7
 date: 2016-11-11 14:31:31
-tags: [centos, mysql]
+tags: [centos, mysql, rpm]
 ---
 
 ```

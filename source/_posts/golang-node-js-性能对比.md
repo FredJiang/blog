@@ -256,3 +256,6 @@ Running 30s test @ http://192.168.200.8:3002
 Requests/sec:  14676.93
 Transfer/sec:      1.29MB
 ```
+
+
+<https://studygolang.com/articles/1603>

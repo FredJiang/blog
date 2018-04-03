@@ -76,6 +76,7 @@ cp contrib/xcscope/xcscope.el ~/.emacs.d/mypackages/
 
 运行 `sudo yum install ncurses-devel` 解决问题
 
+
 #### ubuntu
 
 <http://ergoemacs.org/emacs/building_emacs_on_linux.html>
@@ -84,9 +85,8 @@ cp contrib/xcscope/xcscope.el ~/.emacs.d/mypackages/
 
 ```
 sudo apt-get install build-essential
-sudo apt-get build-dep emacs24
+sudo apt-get build-dep emacs24 # sudo apt-get install emacs
 ```
-
 
 #### emacs
 

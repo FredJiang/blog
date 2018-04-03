@@ -40,11 +40,13 @@ tcl-devel
 ```
 
 
-
-
 如果 python3 安装失败
 
 通过 `yum search python3` 找到合适的包，然后安装
+
+例如
+
+`sudo yum install -y python34 python34-devel`
 
 或用源码安装
 

@@ -5,8 +5,6 @@ tags: [golang, supervisor]
 ---
 
 
-
-
 安装 supervisor
 
 
@@ -51,8 +49,14 @@ stderr_capture_maxbytes=1MB
 
 启动 supervisor（日志文件为 /tmp/supervisord.log）
 
-
 `sudo /usr/bin/supervisord -c /etc/supervisord.conf`
+
+停止
+
+```
+sudo ps aux | grep supervisord
+sudo kill -9 PID
+```
 
 
 如果修改了配置文件
@@ -61,8 +65,11 @@ stderr_capture_maxbytes=1MB
 
 查看 supervisor 运行状态
 
-`sudo supervisorctl`
-
+```
+sudo supervisorctl
+help
+status
+```
 
 从这抄的
 

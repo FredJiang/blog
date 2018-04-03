@@ -1,7 +1,7 @@
 ---
 title: golang blowfish
 date: 2017-10-18 11:41:10
-tags: [golang, blowfish, crypto]
+tags: [golang, blowfish, crypto, encrypt]
 ---
 
 `go get -u -v golang.org/x/crypto`
