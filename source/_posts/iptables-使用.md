@@ -46,3 +46,9 @@ sudo iptables -I INPUT -p tcp -s 10.0.0.0/27 --dport 27017 -j ACCEPT
 -d 目标 IP/网域：同 -s ，只不过这里指的是目标的 IP 或网域。
 
 -j ：后面接动作，主要的动作有接受(ACCEPT)、丢弃(DROP)、拒绝(REJECT)及记录(LOG)
+
+
+
+`sudo iptables -I INPUT 5 -s xx.xx.xx.xx/28 -p tcp -m tcp --dport 80 -m comment --comment "对外 ip，蒋朋添加" -j ACCEPT`
+
+
