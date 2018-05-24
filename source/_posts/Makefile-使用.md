@@ -1,7 +1,7 @@
 ---
 title: Makefile 使用
 date: 2016-11-25 23:16:26
-tags: [gcc, c, linux, makefile]
+tags: [gcc, c, linux, makefile, make, cmake]
 ---
 
 

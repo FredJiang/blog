@@ -1,8 +1,12 @@
 ---
 title: gyp 使用
 date: 2017-02-12 09:37:44
-tags: [gyp, make, build]
+tags: [gyp, make, build, cmake, makefile]
 ---
+
+<https://gyp.gsrc.io/>
+
+GYP(Generate Your Projects) is a Meta-Build system: a build system that generates other build systems.
 
 gyp 是 google 为 chromium 项目开发的管理工具，功能类似于 cmake。gyp 只能产生编译脚本，真正的编译工作还有靠其他工具。
 
@@ -94,9 +98,9 @@ int main()
 
 
 
-#### gyp 使用 ninja
+#### gyp 使用 [ninja](https://ninja-build.org/manual.html)
 
-`rm -r -f an.target.mk build.Makefile Makefile  out`
+`rm -r -f an.target.mk build.Makefile Makefile out`
 
 ```
 ├── build.gyp

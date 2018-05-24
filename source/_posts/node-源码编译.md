@@ -1,7 +1,7 @@
 ---
 title: node 源码编译
 date: 2018-04-28 14:11:53
-tags: [node.js, c++, javascript]
+tags: [node.js, c++, javascript, clion, ide]
 ---
 
 <https://github.com/nodejs/node/blob/master/BUILDING.md>
@@ -102,7 +102,7 @@ ninja -C out/Release # ninja -C out/Debug
 ```
 
 
-使用 clion 调试（一）
+使用 clion 调试（一）（测试成功）
 
 <http://hiihl.com/articles/2018/1/15/learnnode1.md>
 

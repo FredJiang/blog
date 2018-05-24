@@ -8,6 +8,8 @@ tags: [java, tomcat]
 
 <!--more-->
 
+首先需要安装 java
+
 update
 
 ```
@@ -23,7 +25,7 @@ sudo systemctl start rngd
 ```
 mkdir -p /opt/tomcat
 cd ~
-axel http://mirrors.hust.edu.cn/apache/tomcat/tomcat-8/v8.0.48/bin/apache-tomcat-8.0.48.tar.gz
+axel "http://mirrors.hust.edu.cn/apache/tomcat/tomcat-8/v8.0.48/bin/apache-tomcat-8.0.48.tar.gz"
 tar -zxvf apache-tomcat-8.0.48.tar.gz -C /opt/tomcat --strip-components=1
 ```
 
@@ -56,3 +58,23 @@ tomcat 端口在 conf/server.xml
   <Connector port="8080"
 ```
 
+
+如果报错
+
+```
+You are not authorized to view this page.
+
+By default the Manager is only accessible from a browser running on the same machine as Tomcat. If you wish to modify this restriction, you'll need to edit the Manager's context.xml file.
+```
+
+可以修改 `webapps/manager/META-INF/context.xml` 中的 ip 限制（不用重启 tomcat）
+
+```
+<Context antiResourceLocking="false" privileged="true" >
+<!-- 注释掉这里
+  <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+-->
+  <Manager sessionAttributeValueClassNameFilter="java\.lang\.(?:Boolean|Integer|Long|Number|String)|org\.apache\.catalina\.filters\.CsrfPreventionFilter\$LruCache(?:\$1)?|java\.util\.(?:Linked)?HashMap"/>
+</Context>
+```
