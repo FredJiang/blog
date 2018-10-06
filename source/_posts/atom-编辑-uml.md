@@ -12,9 +12,14 @@ tags: [uml, plantuml, atom, editor]
 
 ```
 brew install graphviz
+
+brew tap caskroom/cask
+brew cask install atom
 ```
 
 在 atom 已经安装的前提下
+
+> To install the atom and apm commands, run "Window: Install Shell Commands" from the Command Palette, which will prompt you for an administrator password.
 
 ```
 apm install language-plantuml

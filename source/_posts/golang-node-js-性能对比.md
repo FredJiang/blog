@@ -258,4 +258,9 @@ Transfer/sec:      1.29MB
 ```
 
 
-<https://studygolang.com/articles/1603>
+* <https://studygolang.com/articles/1603>
+* <https://blog.csdn.net/dev_csdn/article/details/78864095>
+* <https://www.toptal.com//back-end/server-side-io-performance-node-php-java-go>
+* <http://www.itran.cc/2017/05/17/server-side-io-performance-node-php-java-go/>
+
+

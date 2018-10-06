@@ -109,7 +109,7 @@ ninja -C out/Release # ninja -C out/Debug
 ```
 ./configure --debug
 PATH=/usr/bin:$PATH: # 在我本机使用 /usr/bin/python --version > Python 2.7.10
-make -j4 -C out BUILDTYPE=Debug
+make -j2 -C out BUILDTYPE=Debug
 ```
 
 编译时，可以使用如下命令查看 cpu 使用情况

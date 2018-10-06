@@ -1,0 +1,71 @@
+@startuml shell
+
+start
+
+:main;
+
+:初始化 v8;
+note right
+  v8::V8::InitializeICUDefaultLocation(argv[0]);
+  v8::V8::InitializeExternalStartupData(argv[0]);
+  std::unique_ptr<v8::Platform> platform = v8::platform::NewDefaultPlatform();
+  v8::V8::InitializePlatform(platform.get());
+  v8::V8::Initialize();
+  v8::V8::SetFlagsFromCommandLine(&argc, argv, true);
+  v8::Isolate::CreateParams create_params;
+  create_params.array_buffer_allocator = v8::ArrayBuffer::Allocator::NewDefaultAllocator();
+  v8::Isolate* isolate = v8::Isolate::New(create_params);
+  .
+  .
+  .
+end note
+
+:CreateShellContext;
+note right
+  // Create a template for the global object.
+  v8::Local<v8::ObjectTemplate> global = v8::ObjectTemplate::New(isolate);
+  // Bind the global 'print' function to the C++ Print callback.
+  global->Set(
+      v8::String::NewFromUtf8(isolate, "print", v8::NewStringType::kNormal)
+          .ToLocalChecked(),
+      v8::FunctionTemplate::New(isolate, Print));
+  .
+  .
+  .
+end note
+
+:给 js 添加全局方法, 并和 c++ 的对应方法代码绑定;
+
+fork
+  :print;
+fork again
+  :read;
+fork again
+  :load;
+fork again
+  :quit;
+fork again
+  :version;
+end fork
+
+:RunShell;
+
+repeat
+  :等待输入 js 代码;
+  if (print("hello world!")) then (yes)
+  elseif (version()) then (yes)
+  else (其他输入)
+  endif
+
+  :v8::Script::Compile;
+
+  :script->Run;
+
+  :打印执行结果;
+  -> printf("%s\n", cstr);
+
+repeat while (quit?)
+
+stop
+
+@enduml

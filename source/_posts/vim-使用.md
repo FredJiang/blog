@@ -1,21 +1,22 @@
 ---
 title: vim 使用
 date: 2017-08-20 12:56:50
-tags: [vim, bash]
+tags: [vim, bash, editor]
 ---
 
 之前一直使用 emacs 做开发，emacs 是挺好用的，但由于不是 linux 自带的，不想在生产环境下安装，所以只能在开发环境下使用，如果要在生产环境下使用的话，我还是倾向于使用 vim
 
 那就试试怎么用 vim 吧
 
+* <https://github.com/wsdjeg/vim-galore-zh_cn>
+
 <!--more-->
 
-首先安装 [Vundle](https://github.com/VundleVim/Vundle.vim)
+首先安装 [Vundle](https://github.com/VundleVim/Vundle.vim)（开发机器上可以安装，正式机器不推荐，纯 vim 够用了）
 
 ```
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
-
 
 修改配置文件 `~/.vimrc`
 
@@ -79,9 +80,9 @@ vim 多窗口操作
 | vim -on a.js b.js | 水平分屏(n是数字，表示分成几个屏)           |
 |===================|=============================================|
 | :sp[lit] {file}   | 水平分屏                                    |
+| :sv[iew] {file}   | 水平分屏，以只读方式打开                    |
 | :nsp              | 打开一个高度为 n 行的新窗口                 |
 | :new {file}       | 水平分屏                                    |
-| :sv[iew] {file}   | 水平分屏，以只读方式打开                    |
 | :vs[plit] {file}  | 垂直分屏                                    |
 | :clo[se]          | 关闭当前窗口                                |
 | :only             | 关闭除当前窗口之外的所有窗口                |
@@ -91,8 +92,8 @@ vim 多窗口操作
 | Ctrl+w n          | 打开一个新窗口（空文件）                    |
 | Ctrl+w T          | 当前窗口移动到新标签页                      |
 |===================|=============================================|
-| Ctrl+W c          | 关闭当前窗口                                |
-| Ctrl+W q          | 关闭当前窗口，如果只剩最后一个了，则退出Vim |
+| Ctrl+w c          | 关闭当前窗口                                |
+| Ctrl+w q          | 关闭当前窗口，如果只剩最后一个了，则退出Vim |
 | Ctrl+w o          | 关闭除当前窗口之外的所有窗口                |
 |===================|=============================================|
 | Ctrl+w h          | 切换到左边窗口                              |
@@ -152,15 +153,31 @@ vim 多 buffer 操作
 | :bn[ext]                | 下一个缓冲区                        |
 | :bp[revious]            | 上一个缓冲区                        |
 | :b {number, expression} | 跳转到指定缓冲区                    |
-| :b <Tab>                | 显示所有Buffer中的文件              |
+| :b <Tab>                | 显示所有 Buffer 中的文件            |
 | :b car<Tab>             | 显示 car.c car.h                    |
 | :b *car<Tab>            | 显示 car.c jetcar.c car.h jetcar.h  |
 | :b .h<Tab>              | 显示 vehicle.h car.h jet.h jetcar.h |
 | :b .c<Tab>              | 显示 vehicle.c car.c jet.c jetcar.c |
 | :b ar.c<Tab>            | 显示 car.c jetcar.c                 |
 | :b j*c<Tab>             | 显示 jet.c jetcar.c jetcar.h        |
-| :sb 3                   | 分屏并打开编号为3的Buffer           |
+| :sb 3                   | 分屏并打开编号为 3 的 Buffer        |
 | :vertical sb 3          | 同上，垂直分屏                      |
+
+
+其他命令
+
+|    命令    |    全称   |         作用         |
+|------------|-----------|----------------------|
+| :E         | :Explore  | 浏览目录             |
+| :e <dir>   |           | 浏览目录             |
+| :He        | :Hexplore | 在下边分屏浏览目录   |
+| :He!       |           | 在上边分屏浏览目录   |
+| :Ve        | :Vexplore | 在左边分屏间浏览目录 |
+| :Ve!       |           | 在右边分屏间浏览目录 |
+| :cd <dir>  |           | 改变当前目录         |
+| :pwd       |           | 查看当前目录         |
+| ctrl + g   |           | 显示文件相对路径     |
+| 1 ctrl + g |           | 显示文件绝对路径     |
 
 参考
 

@@ -1,7 +1,7 @@
 ---
 title: 'v8 笔记 3 -- ReferenceError: console is not defined'
 date: 2017-01-27 00:02:04
-tags: [v8]
+tags: [v8, node.js, google]
 ---
 
 先看一段代码
@@ -20,7 +20,7 @@ undefined
 d8>
 ```
 
-居然报了一个 `ReferenceError: console is not defined` 错。没有 console？
+居然报了一个 `ReferenceError: console is not defined` 错，没有 console？
 
 <!--more-->
 

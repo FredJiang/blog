@@ -1,7 +1,7 @@
 ---
 title: maven 下载依赖源码
 date: 2018-03-14 08:40:27
-tags: [maven, plugin, sources, resolve]
+tags: [maven, plugin, java]
 ---
 
 下载源码

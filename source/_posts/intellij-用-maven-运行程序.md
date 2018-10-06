@@ -1,7 +1,7 @@
 ---
 title: intellij 用 maven 运行程序
 date: 2018-05-16 09:52:18
-tags: [jetbrain, ide, intellij, java, maven]
+tags: [jetbrain, ide, intellij, java, maven, jetty]
 ---
 
 ### 使用 jetty 运行程序
@@ -11,6 +11,10 @@ tags: [jetbrain, ide, intellij, java, maven]
 <!--more-->
 
 {% asset_img "jetty_config.png" "" %}
+
+使用特定 profile
+
+`clean jetty:run -P profileId`
 
 运行或者调试程序
 

@@ -1,7 +1,7 @@
 ---
 title: java 笔记
 date: 2018-01-28 22:14:06
-tags: [java, maven, bean, spring]
+tags: [java, maven, bean, spring, jetty]
 ---
 
 #### 启动 jetty

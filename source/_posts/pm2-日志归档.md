@@ -42,3 +42,11 @@ pm2 set pm2-logrotate:retain 30
 }
 ```
 
+
+```bash
+pm2 set pm2-logrotate:"max_size": "4G"
+pm2 set pm2-logrotate:"retain": "all"
+pm2 set pm2-logrotate:"compress": "false"
+pm2 set pm2-logrotate:"rotateInterval": "00 00 01 * * *"
+pm2 set pm2-logrotate:"dateFormat": "YYYY-MM-DD"
+```

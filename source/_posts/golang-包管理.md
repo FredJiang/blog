@@ -1,7 +1,7 @@
 ---
 title: golang 包管理
 date: 2017-11-29 10:15:06
-tags: [golang, dep]
+tags: [golang, dep, manager, package]
 ---
 
 <https://github.com/golang/dep>
@@ -9,7 +9,7 @@ tags: [golang, dep]
 <!--more-->
 
 ```
-go get -u github.com/golang/dep/cmd/dep
+go get -u github.com/golang/dep/cmd/dep # 或 brew install dep && brew upgrade dep
 cd projectDir
 ```
 

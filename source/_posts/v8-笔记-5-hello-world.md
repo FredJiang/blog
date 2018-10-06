@@ -1,7 +1,7 @@
 ---
 title: v8 笔记 5 -- hello world
 date: 2017-02-10 23:37:53
-tags: [v8]
+tags: [v8, node.js, google]
 ---
 
 

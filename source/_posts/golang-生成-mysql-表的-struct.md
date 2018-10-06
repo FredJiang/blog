@@ -49,5 +49,21 @@ db2struct \
 | sed -e "s/sql.NullString/null.String   /g" \
 | sed -e "s/time.Time/null.Time/g" \
 > structName.go
+
+# 或
+db2struct \
+--json \
+--gorm \
+--guregu \
+--package mysql \
+--host host \
+--mysql_port port \
+--user user \
+-p password \
+-d dbName \
+-t tableName \
+--struct structName \
+> structName.go
 ```
+
 

@@ -12,6 +12,10 @@ tags: [golang]
 
 `go build crossCompiling.go`
 
+// liunx
+
+`GOOS=linux GOARCH=386 go build crossCompiling.go`
+
 // mac os
 
 `GOOS=darwin GOARCH=386 go build crossCompiling.go`

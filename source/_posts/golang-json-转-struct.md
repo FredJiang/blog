@@ -5,3 +5,14 @@ tags: [golang, json]
 ---
 
 <https://github.com/ChimeraCoder/gojson>
+
+
+
+<!--more-->
+
+
+```
+go get github.com/FredJiang/gojson/gojson
+
+# go build -o _build/gojson ./gojson && go install ./gojson
+```
