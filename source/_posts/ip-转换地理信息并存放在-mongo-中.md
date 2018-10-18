@@ -1,7 +1,7 @@
 ---
 title: ip 转换地理信息并存放在 mongo 中
 date: 2017-05-03 15:27:14
-tags: [ip, GeoLite, maxmind]
+tags: [ip, GeoLite, maxmind, mongoimport]
 ---
 
 
@@ -109,6 +109,14 @@ mongoimport \
 --type csv \
 --headerline \
 --file GeoIPCountryWhoisHeadQuote.csv
+```
+
+
+
+```
+mongoimport --db dbName --collection collectionName --drop --file fileName.json
+
+mongoimport --db dbName --collection collectionName        --file fileName.json
 ```
 
 

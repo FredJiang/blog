@@ -15,6 +15,14 @@ sudo ./letsencrypt-auto certonly --standalone --email 270130108@qq.com -d exampl
 sudo service nginx start
 ```
 
+mac [brew](https://github.com/Homebrew/homebrew-services) nginx
+
+```
+brew services list
+sudo brew services stop  nginx
+sudo brew services start nginx
+```
+
 <!--more-->
 
 nginx 配置

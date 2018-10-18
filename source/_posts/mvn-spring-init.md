@@ -43,48 +43,62 @@ touch $1/README.md
 
 ```xml
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.fred.app</groupId>
-  <artifactId>shirodemo</artifactId>
-  <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <name>shirodemo Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-    <!--test-->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
-    <!--spring-->
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-webmvc</artifactId>
-      <version>5.0.5.RELEASE</version>
-    </dependency>
-  </dependencies>
-  <build>
-    <finalName>shirodemo</finalName>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-        <filtering>true</filtering>
-      </resource>
-    </resources>
-    <plugins>
-      <plugin>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-maven-plugin</artifactId>
-        <version>9.4.9.v20180320</version>
-        <configuration>
-          <scanIntervalSeconds>10</scanIntervalSeconds>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.fred.app</groupId>
+    <artifactId>shirodemo</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>shirodemo Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+        <!--test-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <!--spring-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.0.5.RELEASE</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>shirodemo</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.4.9.v20180320</version>
+                <configuration>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <filters>
+                    <filter>profiles/profile-dev.properties</filter>
+                </filters>
+            </build>
+        </profile>
+    </profiles>
 </project>
 
 ```
@@ -96,26 +110,26 @@ touch $1/README.md
 
 ```xml
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
-  <listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/applicationContext*.xml</param-value>
-  </context-param>
-  <servlet>
-    <servlet-name>spring-web-dispatcher</servlet-name>
-    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>spring-web-dispatcher</servlet-name>
-    <url-pattern>/</url-pattern>
-  </servlet-mapping>
+    <display-name>Archetype Created Web Application</display-name>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/applicationContext*.xml</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>spring-web-dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>spring-web-dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
 </web-app>
 
 ```
@@ -125,8 +139,8 @@ touch $1/README.md
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
                         http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 </beans>
 
@@ -146,8 +160,8 @@ touch $1/README.md
                            http://www.springframework.org/schema/context/spring-context-4.3.xsd
                            http://www.springframework.org/schema/mvc
                            http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
-  <context:component-scan base-package="com.fred" />
-  <mvc:annotation-driven />
+    <context:component-scan base-package="com.fred"/>
+    <mvc:annotation-driven/>
 </beans>
 
 ```
@@ -165,7 +179,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     @RequestMapping(value = "/hello")
     public String hello() {
-        return "hello world!";
+        return "-_- hello world!";
     }
 }
 
