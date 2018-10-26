@@ -20,3 +20,12 @@ mvn compile exec:java
 ```
 
 [Apache Shiro Configuration](https://shiro.apache.org/configuration.html)
+
+
+url 配置
+
+<https://www.sojson.com/blog/199.html>
+
+其他
+
+<http://wiki.jikexueyuan.com/project/shiro/>

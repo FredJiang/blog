@@ -11,9 +11,8 @@ tags: [istanbul, node, test, javascript, mocha, nyc]
 ```
 npm install -g istanbul
 npm install -g mocha
-istanbul cover _mocha test/testFile.js
+istanbul cover _mocha test/testFile1.js test/testFile2.js
 ```
-
 
 * <https://istanbul.js.org/>
 * <https://istanbul.js.org/docs/tutorials/mocha/>
@@ -21,7 +20,5 @@ istanbul cover _mocha test/testFile.js
 ```
 npm install -g nyc
 npm install -g mocha
-nyc --reporter=html --reporter=text mocha test/testFile.js
+nyc --reporter=html --reporter=text mocha test/testFile.js test/testFile2.js
 ```
-
-

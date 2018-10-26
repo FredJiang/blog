@@ -1,13 +1,34 @@
+const chalk = require('chalk');
+
+const padLeft = (content, length, padding) => {
+  return (new Array(length - content.length + 1).join(padding) + content);
+};
+
+const highlightChar = (content, hChar) => {
+  let highlightContent = '';
+  for (let char of content) {
+    if (char === hChar) {
+      char = chalk.red(char);
+    }
+    highlightContent += char;
+  }
+  return highlightContent;
+};
+
 const getBinaryString = (n) => {
-  let maxLength = 64;
-  let componentLength = maxLength / 8;
+  n = parseInt(n, 10);
   let binaryString = n.toString(2);
-  binaryString = (new Array(maxLength - binaryString.length + 1).join('0') + binaryString);
+
+  let maxLength = 32;
+  let componentLength = maxLength / 8;
+
+  binaryString = padLeft(binaryString, maxLength, '0');
+
   let binaryStringWithSpace = '';
   for (let i = 0; i < maxLength; i += componentLength) {
     binaryStringWithSpace = binaryStringWithSpace + (binaryStringWithSpace ? ' ' : '') + binaryString.substr(i, componentLength);
   }
-  return binaryStringWithSpace;
+  return highlightChar(binaryStringWithSpace, '1');
 };
 
 // Math.random() * 0x7FFFFFFF
