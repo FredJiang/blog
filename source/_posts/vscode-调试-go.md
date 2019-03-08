@@ -8,7 +8,6 @@ tags: [vscode, go, debug, ide]
 
 <!--more-->
 
-
 ```
 xcode-select --install
 go get -u github.com/derekparker/delve/cmd/dlv
@@ -29,7 +28,9 @@ launch.json
             "port": 2345,
             "host": "127.0.0.1",
             "program": "${fileDirname}", // "program": "/Users/Fred/workspacego/src/demo/",
-            "env": {},
+            "env": {
+                "GOPATH":"/Users/Fred/workspacego"
+            },
             "args": [],
             "showLog": true
         }

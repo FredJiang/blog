@@ -79,7 +79,7 @@ vim config/elasticsearch.yml
 | 列出所有索引 | `curl -X GET    "http://192.168.200.10:9200/_cat/indices?v&s=index"`                                                         | `GET    /_cat/indices?v&s=index` | <https://www.elastic.co/guide/en/elasticsearch/reference/current/cat-indices.html> |
 | 删除索引     | `curl -X DELETE "http://192.168.200.10:9200/logstash-2017.03*?pretty"`                                                       | `DELETE /*-2017.03*?pretty`      |                                                                                    |
 | 显示 mapping | `curl -X GET    "http://192.168.200.10:9200/logstash-2018.07.17/_mapping?pretty"`                                            |                                  |                                                                                    |
-| 显示索引信息 | `curl -X GET    "http://192.168.200.10:9200/logstash-2018.07.17/_settings?pretty"`                                           |                                  |                                                                                    |
+| 显示索引信息 | `curl -X GET    "http://192.168.200.10:9200/logstash-2018.11.07/_settings?pretty"`                                           |                                  |                                                                                    |
 | 设置索引     | `curl -X PUT    "http://192.168.200.10:9200/logstash-2018.07.17/_settings" -d '{"index.mapping.total_fields.limit": 10000}'` |                                  |                                                                                    |
 
 

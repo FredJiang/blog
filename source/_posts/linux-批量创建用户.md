@@ -4,13 +4,11 @@ date: 2017-07-07 23:54:07
 tags: [linux, shell, useradd]
 ---
 
-
 首先来一个删除用户的命令，毕竟代码是要测试的，所以删除测试时添加的用户是有必要的
 
 `sudo userdel -r usera ; sudo userdel -r userb`
 
 <!--more-->
-
 
 先来一个最直接的方式，准给好命令，然后 ssh 登录到服务器上，直接执行命令，例如如下命令
 
@@ -34,11 +32,6 @@ sudo chown userb:userb -R /home/userb/.ssh/ && \
 sudo bash -c "echo 'ssh-rsa AAAAB3XXX Fred@Fred.local'   > /home/usera/.ssh/authorized_keys"  && \
 sudo bash -c "echo 'ssh-rsa AAAAB3XXX Fred@Fred.local'   > /home/userb/.ssh/authorized_keys"
 ```
-
-
-
-
-
 
 
 再来一种将准备好的用户数据放到一个文件中的方式
@@ -92,9 +85,6 @@ done < "$1"
 在远端机器上运行
 
 `./add.sh userlist.txt`
-
-
-
 
 
 以上命令直接在远端机器上运行是没问题的，不过要通过 ssh 在远端机器上运行是有问题的
@@ -266,6 +256,4 @@ done < "$1"
 * <https://www.pantz.org/software/shell/echo_lines_into_a_root_owned_file_with_sudo.html>
 
 
-
-好麻烦呀，后面可以查下怎么直接在 useradd 明命令里面直接指定密码，或者直接用 [ansible](https://www.ansible.com/)
 

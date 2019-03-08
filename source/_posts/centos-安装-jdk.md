@@ -43,6 +43,8 @@ export PATH="$JAVA_HOME/bin:$PATH"
 export CLASSPATH=".:$JAVA_HOME/lib"
 ```
 
+如果有多个 java 版本，切换 `JAVA_HOME` 即可
+
 在 mac 上
 
 ```

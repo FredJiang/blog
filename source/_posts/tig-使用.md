@@ -6,6 +6,8 @@ tags: [tig, git]
 
 ### 安装
 
+<!--more-->
+
 #### centos
 
 ```
@@ -45,5 +47,11 @@ brew install tig
 
 * <http://jonas.nitro.dk/tig/manual.html>
 * <https://jonas.github.io/tig/doc/manual.html>
+
+git status 说明
+
+* <https://www.cs.swarthmore.edu/~adanner/help/git/git-status.php>
+
+
 
 

@@ -1,7 +1,7 @@
 ---
 title: emacs ctrl shift 无效
 date: 2017-01-20 10:08:09
-tags: [emacs, ternimal]
+tags: [emacs, terminal]
 ---
 
 

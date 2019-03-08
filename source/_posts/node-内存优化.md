@@ -1,7 +1,7 @@
 ---
 title: node 内存优化
 date: 2018-10-08 19:51:22
-tags: [node.js, optimize, heapdump]
+tags: [node.js, optimize, heapdump, memory, profile]
 ---
 
 ### [node-heapdump](https://github.com/bnoordhuis/node-heapdump)
@@ -23,7 +23,7 @@ require('heapdump');
 触发
 
 ```bash
-PID=25475
+PID=15268
 
 kill -USR2 $PID
 
@@ -45,12 +45,14 @@ heapdump.writeSnapshot('/home/nodeuser/heapsnapshot/' + Date.now() + '.heapsnaps
 });
 ```
 
-加载到 chrome 中查看
+### Inspecting the snapshot
 
+* Open Google Chrome and press F12 to open the developer toolbar.
+* Go to the Memory tab, right-click in the tab pane and select Load profile....
+* Select the dump file and click Open. You can now inspect the heap snapshot at your leisure.
+* Note that Chrome will refuse to load the file unless it has the .heapsnapshot extension.
 
+<https://developers.google.com/web/tools/chrome-devtools/memory-problems/>
 
-
-
-v8 prof
-
-node-inspector
+* [v8-profiler](https://github.com/node-inspector/v8-profiler)
+* [node-inspector](https://github.com/node-inspector/node-inspector)

@@ -10,6 +10,10 @@ tags: [java, tomcat]
 
 首先需要安装 java
 
+mac 下配置 JAVA_HOME
+
+`export JAVA_HOME=$(/usr/libexec/java_home)`
+
 update
 
 ```
@@ -23,10 +27,10 @@ sudo systemctl start rngd
 下载 tomcat <http://tomcat.apache.org/>
 
 ```
-mkdir -p /opt/tomcat
-cd ~
-axel "http://mirrors.hust.edu.cn/apache/tomcat/tomcat-8/v8.0.48/bin/apache-tomcat-8.0.48.tar.gz"
-tar -zxvf apache-tomcat-8.0.48.tar.gz -C /opt/tomcat --strip-components=1
+mkdir -p /opt/tomcat-9.0.12
+axel        "http://mirrors.hust.edu.cn/apache/tomcat/tomcat-9/v9.0.12/bin/apache-tomcat-9.0.12.tar.gz"
+aria2c -x16 "http://mirrors.hust.edu.cn/apache/tomcat/tomcat-9/v9.0.12/bin/apache-tomcat-9.0.12.tar.gz"
+tar -zxvf apache-tomcat-9.0.12.tar.gz -C /opt/tomcat-9.0.12 --strip-components=1
 ```
 
 启动 tomcat，如果启动很慢的话，看这里 <http://www.cnblogs.com/jie-fang/p/7211574.html>
@@ -78,3 +82,17 @@ By default the Manager is only accessible from a browser running on the same mac
   <Manager sessionAttributeValueClassNameFilter="java\.lang\.(?:Boolean|Integer|Long|Number|String)|org\.apache\.catalina\.filters\.CsrfPreventionFilter\$LruCache(?:\$1)?|java\.util\.(?:Linked)?HashMap"/>
 </Context>
 ```
+
+
+如果报错
+
+```
+Error: Could not find or load main class org.apache.catalina.startup.Bootstrap
+```
+
+可能是下错文件了
+
+是   <http://mirrors.hust.edu.cn/apache/tomcat/tomcat-8/v8.0.53/bin/apache-tomcat-8.0.53.tar.gz>
+
+不是 <http://mirrors.hust.edu.cn/apache/tomcat/tomcat-8/v8.0.53/src/apache-tomcat-8.0.53-src.tar.gz>
+

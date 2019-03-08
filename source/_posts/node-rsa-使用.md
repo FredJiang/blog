@@ -12,7 +12,7 @@ tags: [node, rsa, crypto, openssl]
 
 生成 key 文件
 
-```
+```sh
 openssl
 OpenSSL> genrsa -out rsa_private_key.pem 1024
 OpenSSL> pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM -nocrypt -out rsa_private_key_pkcs8.pem
@@ -22,7 +22,7 @@ OpenSSL> exit
 
 在 node 中使用 key 文件
 
-```
+```javascript
 const crypto = require('crypto');
 const fs = require('fs');
 const privatePem = fs.readFileSync('./pem/rsa_private_key.pem');
