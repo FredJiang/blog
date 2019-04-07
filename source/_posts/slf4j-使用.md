@@ -1,7 +1,7 @@
 ---
 title: slf4j 使用
 date: 2018-03-10 00:27:00
-tags: [java, maven, slf4j, log]
+tags: [java, maven, slf4j, log, logback]
 ---
 
 * <https://www.slf4j.org/manual.html>

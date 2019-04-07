@@ -1,3 +1,4 @@
+---
 title: must be setuid root
 date: 2014-05-11 23:13:42
 tags: [linux,server]

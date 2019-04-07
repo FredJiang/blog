@@ -1,3 +1,4 @@
+---
 title: mongo Replica Set 笔记
 date: 2015-02-28 14:53:10
 tags: [mongo, replication]

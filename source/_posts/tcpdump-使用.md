@@ -4,7 +4,6 @@ date: 2017-01-05 00:17:39
 tags: [network, tcpdump]
 ---
 
-
 最近在使用 zabbix 的时候，遇到了一个问题，就是服务器自身的监控出现了如下问题
 
 {% asset_img "zabbix-error.png" "" %}
@@ -30,7 +29,7 @@ npm start
 抓取数据
 
 ```
-sudo tcpdump -i any port 3000
+sudo tcpdump -n -i any port 3000
 ```
 
 发起网络请求
@@ -88,7 +87,7 @@ man tcpdump -> OUTPUT FORMAT -> TCP Packets
 查看具体数据
 
 ```
-sudo tcpdump port 3000 -X
+sudo tcpdump -n -i any port 3000 -X
 ```
 
 ```

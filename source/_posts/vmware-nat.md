@@ -1,12 +1,17 @@
 ---
 title: vmware nat
 date: 2019-01-14 23:33:15
-tags: [windows, vmware, nat]
+tags: [windows, vmware, nat, 虚拟机]
 ---
 
 <https://hitchhikingtheweb.wordpress.com/2014/09/02/portforwarding-with-vmware-player-and-nat/>
 
 需要管理员权限
+
+```
+C:\ProgramData\VMware
+C:\ProgramData\VMware\vmnetnat.conf
+```
 
 ```sh
 net stop "VMWare NAT Service"

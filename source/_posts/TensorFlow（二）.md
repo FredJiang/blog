@@ -32,18 +32,18 @@ download_data.py 内容如下
 import input_data
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 
-print "mnist.train.images.shape " + str(mnist.train.images.shape)
-print "mnist.train.labels.shape " + str(mnist.train.labels.shape)
+print "mnist.train.images.shape " +      str(mnist.train.images.shape)
+print "mnist.train.labels.shape " +      str(mnist.train.labels.shape)
 print "mnist.validation.images.shape " + str(mnist.validation.images.shape)
 print "mnist.validation.labels.shape " + str(mnist.validation.labels.shape)
-print "mnist.test.images.shape " + str(mnist.test.images.shape)
-print "mnist.test.labels.shape " + str(mnist.test.labels.shape)
+print "mnist.test.images.shape " +       str(mnist.test.images.shape)
+print "mnist.test.labels.shape " +       str(mnist.test.labels.shape)
 ```
 
 运行 TensorFlow
 
 ```
-cd ~/tensorflow/tensorflow/tensorflow/examples/tutorials/mnist/
+cd     ~/tensorflow/tensorflow/tensorflow/examples/tutorials/mnist/
 
 source ~/tensorflow/bin/activate
 

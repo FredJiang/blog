@@ -1,3 +1,4 @@
+---
 title: mongodb 互为主从
 date: 2015-02-11 19:41:44
 tags: [mongo, master, slave]

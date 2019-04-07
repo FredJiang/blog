@@ -11,9 +11,11 @@ tags: [docker, mirror, image]
 <!--more-->
 
 ```bash
-docker pull openjdk:8
+docker pull                                openjdk:8
 # 或
 docker pull registry.docker-cn.com/library/openjdk:8
 # 或
-docker pull reg-mirror.qiniu.com/library/openjdk:8 # 最快
+docker pull   reg-mirror.qiniu.com/library/openjdk:8 # 最快
+
+# 其他镜像，如果下载失败，可以试着把路径中的 library 去掉
 ```

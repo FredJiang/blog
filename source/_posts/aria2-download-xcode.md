@@ -4,6 +4,10 @@ date: 2018-12-01 01:03:09
 tags: [aria2, xcode]
 ---
 
+<https://developer.apple.com/download/more/>
+
+<!--more-->
+
 ```sh
 sudo apt-get install aria2 -y
 

@@ -10,9 +10,9 @@ tags: [gradle, java]
 
 安装 java
 
-安装 sdkman
-
 <!--more-->
+
+安装 sdkman
 
 <http://sdkman.io/install.html>
 
@@ -30,7 +30,6 @@ gradle -v
 ```
 
 
-
 如果慢的话，可以手动安装
 
 ```
@@ -40,8 +39,6 @@ unzip -d /opt/gradle gradle-4.4.1-bin.zip
 ls /opt/gradle/gradle-4.4.1
 export PATH=$PATH:/opt/gradle/gradle-4.4.1/bin
 ```
-
-
 
 ```
 # aliyun
@@ -59,11 +56,10 @@ axel "http://127.0.0.1/gradle/gradle-4.4.1-bin.zip.sha256" && \
 axel "http://127.0.0.1/gradle/gradle-4.4.1-bin.zip" && \
 ```
 
-
-
-
 在 mac 上
 
 `brew install gradle`
 
+在 windows 上
 
+`scoop install gradle`

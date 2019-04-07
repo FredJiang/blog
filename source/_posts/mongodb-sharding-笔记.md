@@ -1,3 +1,4 @@
+---
 title: mongodb sharding 笔记
 date: 2015-03-04 17:57:34
 tags: [mongo, sharding]

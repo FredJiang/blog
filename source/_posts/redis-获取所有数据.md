@@ -6,7 +6,7 @@ tags: [redis, db, shell]
 
 获取 redis key 的总数
 
-```bash
+```sh
 redis-cli -h 127.0.0.1 -p 6379 INFO Keyspace
 
 redis-cli -h 127.0.0.1 -p 6379 DBSIZE
@@ -18,51 +18,58 @@ redis-cli -h 127.0.0.1 -p 6379 DBSIZE
 
 获取所有 key
 
-```bash
+```sh
 # KEYS 会把所有数据加载到内存，数据量大时，别用 KEYS
 redis-cli -h 127.0.0.1 -p 6379 KEYS \*
 keys=$(redis-cli -h 127.0.0.1 -p 6379 KEYS \*);
 echo $keys
 
 
-redis-cli --scan --pattern \*
-keys=$(redis-cli --scan --pattern \*);
+redis-cli -h 127.0.0.1 -p 6379 --scan --pattern \*
+keys=$(redis-cli -h 127.0.0.1 -p 6379 --scan --pattern \*);
 echo $keys
 ```
 
 获取所有 key 和 value（数据大时需要注意）
 
-```bash
-#! /bin/bash
-for key in $(redis-cli --scan --pattern \* | sort);
+```sh
+#!/bin/sh
+
+redisHost="redisHost"
+redisPort="6379"
+redisPassword="redisPassword"
+
+echo Keyspace $(redis-cli 2>/dev/null -h ${redisHost} -p ${redisPort} -a ${redisPassword} INFO Keyspace)
+
+scanPattern=captcha_\*
+
+currentIndex=0
+for key in $(redis-cli 2>/dev/null -h ${redisHost} -p ${redisPort} -a ${redisPassword} --scan --pattern ${scanPattern} count 10 | sort);
 do
-    type=$(redis-cli -h 127.0.0.1 -p 6379 TYPE $key);
-    echo -e "Key   : \033[32m$key \033[0m";
-    echo -e "TYPE  : \033[35m$type\033[0m";
-    echo -e "value :";
-    if [ "$type" == "string" ]; then
-        redis-cli -h 127.0.0.1 -p 6379 GET      $key
+    (( currentIndex++ ))
+    type=$(redis-cli 2>/dev/null -h ${redisHost} -p ${redisPort} -a ${redisPassword} TYPE ${key});
+    if [ "${type}" == "string" ]; then
+        printf "% -5s % -8s % -50s %s\n" ${currentIndex} ${type} ${key} $(redis-cli 2>/dev/null -h ${redisHost} -p ${redisPort} -a ${redisPassword} GET      ${key})
     fi;
-    if [ "$type" == "set" ]; then
-        redis-cli -h 127.0.0.1 -p 6379 SMEMBERS $key
+    if [ "${type}" == "set" ]; then
+        printf "% -5s % -8s % -50s %s\n" ${currentIndex} ${type} ${key} $(redis-cli 2>/dev/null -h ${redisHost} -p ${redisPort} -a ${redisPassword} SMEMBERS ${key});
     fi;
-    if [ "$type" == "zset" ]; then
-        redis-cli -h 127.0.0.1 -p 6379 ZRANGE   $key 0 -1
+    if [ "${type}" == "zset" ]; then
+        printf "% -5s % -8s % -50s %s\n" ${currentIndex} ${type} ${key} $(redis-cli 2>/dev/null -h ${redisHost} -p ${redisPort} -a ${redisPassword} ZRANGE   ${key} 0 -1);
     fi;
-    if [ "$type" == "list" ]; then
-        redis-cli -h 127.0.0.1 -p 6379 LRANGE   $key 0 -1
+    if [ "${type}" == "list" ]; then
+        printf "% -5s % -8s % -50s %s\n" ${currentIndex} ${type} ${key} $(redis-cli 2>/dev/null -h ${redisHost} -p ${redisPort} -a ${redisPassword} LRANGE   ${key} 0 -1);
     fi;
-    if [ "$type" == "hash" ]; then
-        redis-cli -h 127.0.0.1 -p 6379 HGETALL  $key
+    if [ "${type}" == "hash" ]; then
+        printf "% -5s % -8s % -50s %s\n" ${currentIndex} ${type} ${key} $(redis-cli 2>/dev/null -h ${redisHost} -p ${redisPort} -a ${redisPassword} HGETALL  ${key});
     fi;
-    echo "";
 done
 ```
 
 
 获取指定条数数据
 
-```bash
+```sh
 redis-cli -h 127.0.0.1 -p 6379 SCAN 0 MATCH \* COUNT 5
 keys=$(redis-cli -h 127.0.0.1 -p 6379 SCAN 0 MATCH \* COUNT 5);
 echo $keys
@@ -71,29 +78,59 @@ echo $keys
 
 获取一定条数的 key
 
-```bash
-#!/bin/bash
+```sh
+#!/bin/sh
+
+redisHost="redisHost"
+redisPort="6379"
+redisPassword="redisPassword"
+
+echo Keyspace $(redis-cli 2>/dev/null -h ${redisHost} -p ${redisPort} -a ${redisPassword} INFO Keyspace)
+
+scanPattern=captcha_\*
+
 currentIndex=0
 cursor=0
-while [ $currentIndex -le 10000 ]
+maxCount=200
+echoCount=100
+while [ ${currentIndex} -lt ${maxCount} ]
 do
-    redisResult=$(redis-cli -h 127.0.0.1 -p 6379 SCAN $cursor MATCH \* COUNT 100);
+    redisResult=$(redis-cli 2>/dev/null -h ${redisHost} -p ${redisPort} -a ${redisPassword} SCAN $cursor MATCH ${scanPattern} COUNT ${echoCount});
+    # echo redisResult ${redisResult}
     stringArray=($redisResult)
     arrayLenght=${#stringArray[@]}
+    # echo arrayLenght ${arrayLenght}
     cursor=${stringArray[0]}
+    # echo cursor ${cursor}
     if [ $arrayLenght -ge 2 ]
     then
-        isCursor=true
+        theFirstIsCursor=true
         for key in $redisResult;
         do
-            if $isCursor
+            if ${theFirstIsCursor}
             then
-                isCursor=false
+                theFirstIsCursor=false
                 continue
             fi
             (( currentIndex++ ))
-            echo $currentIndex $key;
-        done        
+
+            type=$(redis-cli 2>/dev/null -h ${redisHost} -p ${redisPort} -a ${redisPassword} TYPE ${key});
+            if [ "${type}" == "string" ]; then
+                printf "% -5s % -8s % -50s %s\n" ${currentIndex} ${type} ${key} $(redis-cli 2>/dev/null -h ${redisHost} -p ${redisPort} -a ${redisPassword} GET      ${key})
+            fi;
+            if [ "${type}" == "set" ]; then
+                printf "% -5s % -8s % -50s %s\n" ${currentIndex} ${type} ${key} $(redis-cli 2>/dev/null -h ${redisHost} -p ${redisPort} -a ${redisPassword} SMEMBERS ${key});
+            fi;
+            if [ "${type}" == "zset" ]; then
+                printf "% -5s % -8s % -50s %s\n" ${currentIndex} ${type} ${key} $(redis-cli 2>/dev/null -h ${redisHost} -p ${redisPort} -a ${redisPassword} ZRANGE   ${key} 0 -1);
+            fi;
+            if [ "${type}" == "list" ]; then
+                printf "% -5s % -8s % -50s %s\n" ${currentIndex} ${type} ${key} $(redis-cli 2>/dev/null -h ${redisHost} -p ${redisPort} -a ${redisPassword} LRANGE   ${key} 0 -1);
+            fi;
+            if [ "${type}" == "hash" ]; then
+                printf "% -5s % -8s % -50s %s\n" ${currentIndex} ${type} ${key} $(redis-cli 2>/dev/null -h ${redisHost} -p ${redisPort} -a ${redisPassword} HGETALL  ${key});
+            fi;
+        done
     fi
     if [ $cursor -eq 0 ]
     then

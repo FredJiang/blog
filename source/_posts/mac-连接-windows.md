@@ -7,11 +7,8 @@ tags: [mac, vnc, remote, windows]
 
 下载软件
 
-<https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417?mt=12#>
-
-或
-
-<https://pan.baidu.com/s/1nvM7rj7>
+* <https://bbs.feng.com/read-htm-tid-10464436.html>
+* <https://pan.baidu.com/s/1jH5Qjvo> 提取密码：wfd7
 
 <!--more-->
 
