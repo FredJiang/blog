@@ -14,29 +14,29 @@ sudo yum update -y \
 sudo yum groupinstall -y 'Development Tools' \
 && \
 sudo yum install -y \
-ctags \
-gcc \
-git \
-lua \
-lua-devel \
-luajit \
-luajit-devel \
-make \
-mercurial \
-ncurses-devel \
-perl \
-perl-devel \
-perl-ExtUtils-CBuilder \
-perl-ExtUtils-Embed \
-perl-ExtUtils-ParseXS \
-perl-ExtUtils-XSpp \
-python \
-python-devel \
-python3 \
-python3-devel \
-ruby \
-ruby-devel \
-tcl-devel
+                    ctags \
+                    gcc \
+                    git \
+                    lua \
+                    lua-devel \
+                    luajit \
+                    luajit-devel \
+                    make \
+                    mercurial \
+                    ncurses-devel \
+                    perl \
+                    perl-devel \
+                    perl-ExtUtils-CBuilder \
+                    perl-ExtUtils-Embed \
+                    perl-ExtUtils-ParseXS \
+                    perl-ExtUtils-XSpp \
+                    python \
+                    python-devel \
+                    python3 \
+                    python3-devel \
+                    ruby \
+                    ruby-devel \
+                    tcl-devel
 ```
 
 

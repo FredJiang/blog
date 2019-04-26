@@ -4,7 +4,6 @@ date: 2017-08-08 10:28:21
 tags: [email, smtp, ubuntu]
 ---
 
-
 ### Ubuntu 16.04
 
 先用 `which mail` 看看有没有 `mail`
@@ -48,8 +47,6 @@ mail -v \
 ```
 
 注意，这里用的是 `smtps://smtp.qq.com:465`
-
-
 
 在配置文件里面配置账号
 
