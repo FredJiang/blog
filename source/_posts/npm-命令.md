@@ -5,7 +5,7 @@ tags: [node, npm, nvm]
 ---
 
 
-```
+```sh
 npm list        --depth=0
 npm list     -g --depth=0
 
@@ -19,8 +19,8 @@ npm-check       --skip-unused
 npm-check    -g --skip-unused
 
 npm-check       --skip-unused --update
-npm-check    -g --skip-unused --update
+npm-check    -g --skip-unused --update     # Interactive update
 
 npm-check       --skip-unused --update-all --save-exact
-npm-check    -g --skip-unused --update-all
+npm-check    -g --skip-unused --update-all # Uninteractive update.
 ```
