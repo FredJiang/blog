@@ -5,7 +5,6 @@ tags: [ios, xcode, mac]
 ---
 
 * <https://stackoverflow.com/questions/21631313/xcode-project-vs-xcode-workspace-differences>
-* <https://kangzubin.com/xcode-build-settings/>
 
 <!--more-->
 

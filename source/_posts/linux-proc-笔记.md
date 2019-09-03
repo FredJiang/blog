@@ -7,10 +7,12 @@ tags: [linux, proc, env]
 
 #### /proc/$PID/environ
 
+to get that output more readable, parse the null character `\0` and replace them by new lines `\n` for readability
+
 `(cat environ; echo) | tr '\000' '\n'`
 
 ```
-PID=28736
+PID=2365
 (cat /proc/$PID/environ; echo) | tr '\000' '\n'
 ```
 

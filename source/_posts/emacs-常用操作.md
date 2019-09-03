@@ -23,4 +23,3 @@ tags: [emacs]
 |                                   | y      |           | replace              |
 |                                   | n      |           | skip                 |
 |                                   | !      |           | replace all          |
-

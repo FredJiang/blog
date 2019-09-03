@@ -6,8 +6,8 @@ tags: [tmux, iTerm2, tmuxinator]
 
 如果使用 iTerm2，且 tmux 的版本足够新的话，可以使用如下命令打开 tmux
 
-* `tmux -CC`
-* `tmux -CC attach`
+* `tmux -CC`        # 需要先登陆到远程机器
+* `tmux -CC attach` # 需要先登陆到远程机器，且有 session 存在
 
 然后在 iTerm2 中使用如下命令来复制会话
 

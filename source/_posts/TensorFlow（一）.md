@@ -11,16 +11,15 @@ tags: [TensorFlow, machine learning]
 下载与安装
 
 ```bash
-sudo apt-get install -y python-pip python-dev python-virtualenv
+sudo apt-get install -y python-dev \
+                        python-pip \
+                        python-virtualenv
 virtualenv --system-site-packages ~/tensorflow
 cd ~/tensorflow
 source ~/tensorflow/bin/activate
 
 # https://mirror.tuna.tsinghua.edu.cn/help/tensorflow/
 pip install --upgrade https://mirrors.tuna.tsinghua.edu.cn/tensorflow/linux/cpu/tensorflow-1.10.0-cp27-none-linux_x86_64.whl
-# pip install \
-#   -i https://pypi.tuna.tsinghua.edu.cn/simple/ \
-#   https://mirrors.tuna.tsinghua.edu.cn/tensorflow/linux/cpu/tensorflow-1.10.0-cp27-none-linux_x86_64.whl
 
 # 停用 virtualenv
 deactivate

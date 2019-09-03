@@ -1,7 +1,7 @@
 ---
 title: telnet 异常
 date: 2018-10-26 10:38:41
-tags: [telnet, nmap]
+tags: [telnet, nmap, anyconnect, vpn]
 ---
 
 * <https://stackoverflow.com/questions/25420083/some-osx-block-the-socket-call-to-port-80-until-a-complete-http-request/25482140>

@@ -14,13 +14,17 @@ tags: [tomcat, java, deploy]
 
 ```xml
 <Server port="6112" shutdown="SHUTDOWN">
-
     <Connector port="8112" protocol="HTTP/1.1"
-
       <Host name="localhost"  appBase="webapps"
-            unpackWARs="true" autoDeploy="true">
+            unpackWARs="true" autoDeploy="false">
         <Context path="" docBase="/export/tomcat_vhost/deploy.test.fred.com_tc8_8112" debug="0" reloadable="false">
 ```
+
+Context 还可以在另外三个地方配置
+
+* Tomcat’s `CATALINA_HOME/conf/[EngineName]/[Hostname]`
+* Your web application’s `WEB-INF/context.xml`
+* Your web application’s `META-INF/context.xml`
 
 ```sh
 ls /export/tomcat_vhost/deploy.test.fred.com_tc8_8112
@@ -64,6 +68,3 @@ fi
 ```
 
 日志在 /web/tomcat/deploy.test.fred.com_tc8_8112/logs
-
-
-

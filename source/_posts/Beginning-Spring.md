@@ -9,7 +9,7 @@ tags: [java, spring, book]
 
 <!--more-->
 
-```sh
+```shell
 cd /Users/Fred/workspaceJava && \
 mkdir -p /Users/Fred/workspaceJava/beginning-spring/git && \
 mkdir -p /Users/Fred/workspaceJava/beginning-spring/wrox

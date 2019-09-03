@@ -8,8 +8,6 @@ tags: [uml, plantuml, ASCII, ditaa]
 
 平常画图用的是 uml
 
-
-
 * [emacs 配置 PlantUML](../../../../2016/08/04/emacs-配置-PlantUML/)
 * [UML 部署图](../../../../2016/08/06/UML-部署图/)
 * [atom 编辑 uml](../../../../2016/12/21/atom-编辑-uml/)

@@ -1,7 +1,7 @@
 ---
 title: elk 安装
 date: 2017-03-14 10:30:01
-tags: [elk]
+tags: [elk, elasticsearch, kibana, logstash, filebeat]
 ---
 
 * [参考](#参考)

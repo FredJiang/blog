@@ -37,8 +37,6 @@ sudo -H bash -c "python -m pip install -U matplotlib"
 
 ```sh
 # ↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧
-docker pull registry.docker-cn.com/myname/myrepo:mytag
-
 docker pull                        tensorflow/tensorflow:1.13.1
 docker pull   reg-mirror.qiniu.com/tensorflow/tensorflow:1.13.1
 docker pull registry.docker-cn.com/tensorflow/tensorflow:1.13.1
